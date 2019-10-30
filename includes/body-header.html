@@ -1,0 +1,31 @@
+<header class="mb-5">
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>ARCHIVES<br /> COLLECTIONS</h1>
+        </div>
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-3 loggedIn-section" hidden><p class="wrapper">Welcome <span id="user-name"></span>|<a class="btn btn-link" href="^HOME_SESSID^?LOGOFF&amp;file=[MIT_ROOT]home.html&cookie=BOOKMARK">Logout</a></p></div>
+                <div class="col-sm-3 not-loggedIn-section"><button class="btn btn-default" data-toggle="modal"
+                        data-target="#login-modal">Login</button></button></div>
+                <div class="col-sm-9">
+                    <form class="form-inline" method="POST" action="^HOME_SESSID^?UNIONSEARCH&amp;APPLICATION=UNION_VIEW&amp;LANGUAGE=144&amp;SIMPLE_EXP=Y&amp;report=WEB_SUM_DESC&ERRMSG=[MIT_ROOT]no-record.html">
+                        <input type="text" name="KEYWORD_CL" class="form-control" placeholder="Search Term" required>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section id="search">
+    <div class="row navigation-line">
+        <div class="col-sm-3"><button type="button" class="btn btn-default navigation-button">Search</button></div>
+        <div class="col-sm-3"><button type="button" class="btn btn-default navigation-button">Library & Archives Catalog</button></div>
+        <div class="col-sm-3"><button type="button" class="btn btn-default navigation-button">Laboratory History</button></div>
+        <div class="col-sm-3"><button type="button" class="btn btn-default navigation-button">Exhibitions</button></div>
+
+    </div>
+    <div class="image-holder">
+        <img class="img-fluid" src="/assets/banner/MWI_Header.png" alt="Banner Image">
+    </div>

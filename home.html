@@ -1,0 +1,47 @@
+<!-- include virtual="[includes]document-header.html"-->
+
+<!-- include virtual="[includes]body-header.html"-->
+
+
+
+    <div class="card" id="advance-search">
+        <div class="card-header">
+            <h3>SIMPLE SEARCH</h3>
+        </div>
+        <div class="card-body">
+           <!-- include virtual="[includes]log-in-button.html"-->
+
+            <div class="simple-search">
+
+                <div class="row">
+                    <form class="form-inline simple-search-form" method="POST" action="^HOME_SESSID^?UNIONSEARCH&amp;APPLICATION=UNION_VIEW&amp;LANGUAGE=144&amp;SIMPLE_EXP=Y&amp;report=WEB_SUM_DESC&ERRMSG=[MIT_ROOT]no-record.html">
+                        <div class="input-group">
+                            <input type="text" name="KEYWORD_CL" id="KEYWORD_CL" class="form-control" placeholder="Search" required>
+                            <div class="input-group-append submit-search-form">
+                                <span class="input-group-text" id="basic-addon1"><button type="submit"><i class="fa fa-search"></i></button></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="row modify-search margin-bottom" style="padding-left:1.8rem"><div class="col-sm-12"><input type="checkbox" class="form-check-input">
+                    Disable full text searching of digital assets</div></div>
+                <section id="form-lower-section">
+
+                    <div class="row">
+                        <div class="col-sm-4"><button type="button" class="btn btn-default">Browse</button></div>
+                        <div class="col-sm-4"><a href="^HOME_SESSID^?GET&FILE=[MIT_ROOT]advance-page.html" class="btn btn-default">Advanced
+                                Search</a></div>
+                        <div class="col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#help-modal">Help</button></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+<!-- include virtual="[includes]body-footer.html"-->
+<!-- include virtual="[includes]modals.html"-->
+</div>
+<!-- include virtual="[includes]document-footer.html"-->
+
+

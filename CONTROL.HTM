@@ -1,0 +1,47 @@
+<HTML><HEAD><TITLE>MITLL Control Panel</TITLE>
+</HEAD><BODY>
+<H1>MITLL Control Panel</H1>
+<HR>
+<FORM METHOD=POST ACTION="http://mitlldev.minisisinc.com/scripts/mwimain.dll?SYSTEMCTRL">
+<BR>
+User name :
+<INPUT TYPE="text" SIZE=20 NAME="USERNAME">
+Password :
+<INPUT TYPE="password" SIZE=10 NAME="USERPASSWORD">
+<BR><BR>
+<INPUT TYPE="CHECKBOX" NAME="RESETSYS" VALUE="X">Reset System
+<INPUT TYPE="CHECKBOX" NAME="PAUSESYS" VALUE="X">Deny user request
+<INPUT TYPE="CHECKBOX" NAME="RESUMESYS" VALUE="X">Accept user request
+<BR><BR>
+Refresh Site Profile:
+<INPUT TYPE="text" SIZE=30 NAME="SITEPROFILE">
+Language:
+<INPUT TYPE="RADIO" NAME="SITELANG" VALUE="144">English
+<INPUT TYPE="RADIO" NAME="SITELANG" VALUE="145">French
+<INPUT TYPE="RADIO" NAME="SITELANG" VALUE="0" CHECKED>All
+<BR><BR>
+Refresh Database Profile:
+<INPUT TYPE="text" SIZE=30 NAME="DBPROFILE">
+Language:
+<INPUT TYPE="RADIO" NAME="DBLANG" VALUE="144">English
+<INPUT TYPE="RADIO" NAME="DBLANG" VALUE="145">French
+<INPUT TYPE="RADIO" NAME="DBLANG" VALUE="0" CHECKED>All
+<BR><BR>
+Dismount Database:
+<INPUT TYPE="text" SIZE=30 NAME="DISMOUNTDB">
+<BR>
+Mount Database:
+<INPUT TYPE="text" SIZE=30 NAME="MOUNTDB">
+<BR><BR>
+<INPUT TYPE="CHECKBOX" NAME="SHOWREP" VALUE="X" CHECKED>Show System Status
+<BR><BR>
+Unlock record
+<INPUT TYPE="text" SIZE=10 NAME="UNLOCKISN">
+ of database
+<INPUT TYPE="text" SIZE=30 NAME="UNLOCKDB">
+<BR><BR>
+
+<P><INPUT TYPE="submit" VALUE="OK">  <INPUT TYPE="reset" VALUE="Clear"></P>
+</FORM>
+<HR>
+</BODY></HTML>

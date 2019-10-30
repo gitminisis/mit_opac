@@ -1,0 +1,211 @@
+<!-- include virtual="[includes]document-header.html"-->
+
+<!-- include virtual="[includes]body-header.html"-->
+
+
+
+<div class="card" id="advance-search">
+    <div class="card-header">
+        <h3>ADVANCED SEARCH</h3>
+    </div>
+    <div class="card-body">
+        <!-- include virtual="[includes]log-in-button.html"-->
+
+        <div class="advance-search-form">
+            <form method="POST" name="advanceSearchForm" id="advanceSearchForm" action="^HOME_SESSID^?UNIONSEARCH&APPLICATION=UNION_VIEW&LANGUAGE=144&SIMPLE_EXP=Y&report=WEB_SUM_DESC&ERRMSG=[MIT_ROOT]no-record.html">
+                <div class="search-fields">
+                    <div class="row">
+                        <div class="col-sm-2"><label for="field1">Select Field:</label></div>
+                        <div class="col-sm-6">
+                            <select title="Field to search" name="mnemonic1">
+                                <option value="">Select</option>
+                                <option value="REFD">Reference ID</option>
+                                <option value="LEVEL_DESC">Level</option>
+                                <option value="D_ACCNO">Accession Number</option>
+                                <option value="RST_LEVEL">Classification</option>
+                                <option value="TITLE">Title</option>
+                                <option value="DATE_CR_INC">Date Span</option>
+                                <option value="BOX_NO">Location</option>
+                                <option value="CONTAINER">Box #</option>
+                                <option value="FORM">Material Type</option>
+                                <option value="REP_DIGITAL">Digital</option>
+                                <option value="RESTRICTIONS">Conditions Governing Access </option>
+                                <option value="OTHER_FORMATS">Location of Copies</option>
+                                <option value="RELATED_MAT">Related Material </option>
+                                <option value="SCOPE">Scope Note </option>
+                                <option value="OTHER_CONTEXT">Other Context </option>
+                                <option value="NOTES">General Notes </option>
+                                <option value="">General Physical Description Notes </option>
+                                <option value="CONSERVATION">General Physical Description Notes </option>
+                                <option value="TITLE_NOTES">Physical and Technical Requirements Notes </option>
+                                <option value="ORIGINATOR">Creator</option>
+                                <option value="INDEXPROV">Donor/Source</option>
+                                <option value="SUBJECT">Subject Taxonomy Term(s)</option>
+                                <option value="CORPORATE">Corporate Taxonomy Term(s)</option>
+                                <option value="INDEXSUB">People Subjects</option>
+                            </select>
+                            <input type="text" class="form-control" name="searchVal1">
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <input type="radio" value="and" name="bool1">and
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="radio" value="or" name="bool1">or
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="radio" value="not" name="bool1">not
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2"><label for="field2">Select Field:</label></div>
+                        <div class="col-sm-6">
+                            <select title="Field to search" name="mnemonic2">
+                                <option value="">Select</option>
+                                <option value="REFD">Reference ID</option>
+                                <option value="LEVEL_DESC">Level</option>
+                                <option value="D_ACCNO">Accession Number</option>
+                                <option value="RST_LEVEL">Classification</option>
+                                <option value="TITLE">Title</option>
+                                <option value="DATE_CR_INC">Date Span</option>
+                                <option value="BOX_NO">Location</option>
+                                <option value="CONTAINER">Box #</option>
+                                <option value="FORM">Material Type</option>
+                                <option value="REP_DIGITAL">Digital</option>
+                                <option value="RESTRICTIONS">Conditions Governing Access </option>
+                                <option value="OTHER_FORMATS">Location of Copies</option>
+                                <option value="RELATED_MAT">Related Material </option>
+                                <option value="SCOPE">Scope Note </option>
+                                <option value="OTHER_CONTEXT">Other Context </option>
+                                <option value="NOTES">General Notes </option>
+                                <option value="">General Physical Description Notes </option>
+                                <option value="CONSERVATION">General Physical Description Notes </option>
+                                <option value="TITLE_NOTES">Physical and Technical Requirements Notes </option>
+                                <option value="ORIGINATOR">Creator</option>
+                                <option value="INDEXPROV">Donor/Source</option>
+                                <option value="SUBJECT">Subject Taxonomy Term(s)</option>
+                                <option value="CORPORATE">Corporate Taxonomy Term(s)</option>
+                                <option value="INDEXSUB">People Subjects</option>
+                            </select>
+                            <input type="text" class="form-control" name="SearchVal2">
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <input type="radio" value="and" name="bool2">and
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="radio" value="or" name="bool2">or
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="radio" value="not" name="bool2">not
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2"><label for="field3">Select Field:</label></div>
+                        <div class="col-sm-6">
+                            <select title="Field to search" name="mnemonic3">
+                                <option value="">Select</option>
+                                <option value="REFD">Reference ID</option>
+                                <option value="LEVEL_DESC">Level</option>
+                                <option value="D_ACCNO">Accession Number</option>
+                                <option value="RST_LEVEL">Classification</option>
+                                <option value="TITLE">Title</option>
+                                <option value="DATE_CR_INC">Date Span</option>
+                                <option value="BOX_NO">Location</option>
+                                <option value="CONTAINER">Box #</option>
+                                <option value="FORM">Material Type</option>
+                                <option value="REP_DIGITAL">Digital</option>
+                                <option value="RESTRICTIONS">Conditions Governing Access </option>
+                                <option value="OTHER_FORMATS">Location of Copies</option>
+                                <option value="RELATED_MAT">Related Material </option>
+                                <option value="SCOPE">Scope Note </option>
+                                <option value="OTHER_CONTEXT">Other Context </option>
+                                <option value="NOTES">General Notes </option>
+                                <option value="">General Physical Description Notes </option>
+                                <option value="CONSERVATION">General Physical Description Notes </option>
+                                <option value="TITLE_NOTES">Physical and Technical Requirements Notes </option>
+                                <option value="ORIGINATOR">Creator</option>
+                                <option value="INDEXPROV">Donor/Source</option>
+                                <option value="SUBJECT">Subject Taxonomy Term(s)</option>
+                                <option value="CORPORATE">Corporate Taxonomy Term(s)</option>
+                                <option value="INDEXSUB">People Subjects</option>
+                            </select>
+                            <input type="text" class="form-control" name="SearchVal3">
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <input type="radio" value="and" name="bool3">and
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="radio" value="or" name="bool3">or
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="radio" value="not" name="bool3">not
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row add-row">
+                       
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <p class="blue"><a class="btn btn-link" onclick="addSearchField()"><i class="fa fa-plus">Add
+                                More Search Fields</i></a></p>
+                </div>
+               
+                <section id="form-lower-section">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <div class="row">
+                                <div class="col-sm-3"><label for="range1">Date Range between:</label></div>
+                                <div class="col-sm-9"><select id="datepickerOne"></select><span class="left">
+                                        and </span><select id="datepickerTwo"></select></div>
+                                       
+                            </div>
+                            <input type="hidden" name="date" id="hidden-date">
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-primary">SEARCH</button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="reset" class="btn btn-primary">CLEAR</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row margin-bottom" style="padding-left:1.8rem"><input type="checkbox" class="form-check-input">
+                        Disable full text searching of digital assets</div>
+                    <div class="row">
+                        <div class="col-sm-4"><button type="button" class="btn btn-default">Browse</button></div>
+                        <div class="col-sm-4"><a href="^HOME_SESSID^?get&file=[MIT_ROOT]home.html"  class="btn btn-default">Simple
+                                Search</a></div>
+                        <div class="col-sm-4"><button type="button" class="btn btn-default" data-toggle="modal"
+                                data-target="#help-modal">Help</button></div>
+                    </div>
+
+                </section>
+                <input type="hidden" name="KEYWORDS" id="hiddenKeywords">
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+<!-- include virtual="[includes]body-footer.html"-->
+<!-- include virtual="[includes]modals.html"-->
+
+</div>
+<!-- include virtual="[includes]document-footer.html"-->
