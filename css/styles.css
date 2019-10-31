@@ -219,7 +219,7 @@ a.sort.btn-default {
 }
 #right-bar {
   background-color: #ebecee;
-  padding: 2% !important;
+  padding: 10px !important;
   color: #5c788f;
   text-align: center;
   margin-top: 1%;
@@ -438,6 +438,7 @@ i.fa-caret-down {
   text-align: left;
   text-decoration: none;
   padding-left: 0;
+  padding-right: 0;
   font-size: 15px;
   font-weight: bold;
 }
