@@ -13,6 +13,20 @@ function getCookie(cname) {
     }
     return "";
 }
+function isHomeSessValid(){
+    var id = $("#homesessid-confirmer").text();
+    var elements = id.split("/");
+   if(elements.length==6){
+       return true;
+   }else{
+       return false;
+   }
+}
+
+
+
+console.log(isHomeSessValid());
+
 var selectOptionsYear = "";
 var yearCounter = 0;
 var CurrentYearDatePickerID = "";
@@ -96,7 +110,36 @@ $(document).ready(function () {
 var searchFieldsLength = $(".search-fields>.row");
 
 function addSearchField() {
-    var fieldToadd = ' <div class="row"><div class="col-sm-2"><label for="field2">Select Field:</label></div><div class="col-sm-6"><select><option value="1">Test</option><option value="1">Test</option><option value="1">Test</option><option value="1">Test</option></select><input type="text" class="form-control"></div><div class="col-sm-4"><div class="row"><div class="col-sm-4"><input type="radio" value="and">and</div><div class="col-sm-4"><input type="radio" value="or">or</div><div class="col-sm-4" style="padding-left:40px"><input type="radio" value="not">not <span class="small right remove" style="margin-top:7px; cursor:pointer">Remove</span></div></div></div></div>';
+    var fieldToadd = '<div class="row"><div class="col-sm-2"><label for="field2">Select Field:</label></div><div class="col-sm-6">'+
+    '<select>'+
+        '<option value="">Select</option>'+
+        '<option value="REFD">Reference ID</option>'+
+        '<option value="LEVEL_DESC">Level</option>'+
+        '<option value="D_ACCNO">Accession Number</option>'+
+        '<option value="TITLE">Title</option>'+
+        '<option value="DATE_CR_INC">Date Span</option>'+
+        '<option value="BOX_NO">Location</option><option value="CONTAINER">Box #</option>'+
+        '<option value="FORM">Material Type</option>'+
+        '<option value="REP_DIGITAL">Digital</option>'+
+        '<option value="RESTRICTIONS">Conditions Governing Access</option>'+
+        '<option value="OTHER_FORMATS">Location of Copies</option>'+
+        '<option value="RELATED_MAT">Related Material </option>'+
+        '<option value="SCOPE">Scope Note</option>'+
+        '<option value="OTHER_CONTEXT">Other Context </option>'+
+        '<option value="NOTES">General Notes</option>'+
+        '<option value="SCOPE">General Physical Description Notes </option>'+
+        '<option value="CONSERVATION">General Physical Description Notes </option>'+
+        '<option value="TITLE_NOTES">Physical and Technical Requirements Notes </option>'+
+        '<option value="ORIGINATOR">Creator</option>'+
+        '<option value="INDEXPROV">Donor/Source</option>'+
+        '<option value="SUBJECT">Subject Taxonomy Term(s)</option>'+
+        '<option value="CORPORATE">Corporate Taxonomy Term(s)</option>'+
+        '<option value="INDEXSUB">People Subjects</option>'+
+
+    '</select>'+
+    '<input type="text" class="form-control"></div><div class="col-sm-4"><div class="row"><div class="col-sm-4"><input type="radio" value="and">and</div>'+
+    '<div class="col-sm-4"><input type="radio" value="or">or</div><div class="col-sm-4"><input type="radio" value="not">not '+
+    '</div></div></div></div>';
 
     $(".search-fields").append(fieldToadd);
     $(".search-fields select").selectBoxIt();
@@ -114,7 +157,6 @@ $(".record-selection").change(function () {
 })
 $(".bookmark").on("click", function (e) {
     var checkedItems = $("#bookmark-form input[type=checkbox]:checked");
-    console.log(checkedItems.length)
     if (checkedItems.length > 0) {
         $("form#bookmark-form").submit()
     }
@@ -170,7 +212,6 @@ function arrangeAdvanceSearchCluster(fields) {
 
     })
     $("#hiddenKeywords").val(searchPhrase)
-    console.log(firstDate)
     $("#hidden-date").val(firstDate+"-"+secondDate);
 }
 $("#datepickerOne").on("change", function(){
@@ -223,5 +264,6 @@ $("#datepickerTwoSelectBoxItContainer").on("click", function () {
     })
 
 })
+
 
 
