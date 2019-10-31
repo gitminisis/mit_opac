@@ -1,3 +1,5 @@
 scripts/
 web.config
 /*.dll
+scripts/web.config
+scripts/*.dll
