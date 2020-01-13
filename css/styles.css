@@ -82,7 +82,7 @@ section#search img {
   text-align: center;
 }
 .card#advance-search .card-body .btn:not(.btn-primary) {
-  padding: 0 5px 2px;
+  padding: 6px 12px 6px 12px;
   color: #5c788f !important;
 }
 .card#advance-search .card-body .row {
@@ -527,5 +527,5 @@ span.help-modal-bread-crump i {
 .modal-body #div10,
 .modal-body #div11,
 .modal-body #div12 {
-  margin-left: 5px !important;
+  /* margin-left: 5px !important; */
 }
