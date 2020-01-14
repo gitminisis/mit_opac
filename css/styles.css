@@ -528,7 +528,8 @@ span.help-modal-bread-crump i {
   }
   .print {
     position: absolute !important;
-    left: -200 !important;
-    top: -400 !important;
+    left: -330 !important;
+    top: -450 !important;
+    width: 100vw !important;
   }
 }
