@@ -501,10 +501,34 @@ span.help-modal-bread-crump i {
 }
 
 .back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
 }
 
+#resultsNumber {
+  /* width: 130px;
+  float: right !important;
+  margin: 5px 25px 0 0;
+  height: 30px;
+  border-radius: 5px; */
+}
 
+#pagination {
+  float: right !important;
+  margin-right: 25px;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print * {
+    visibility: visible !important;
+  }
+  .print {
+    position: absolute !important;
+    left: -200 !important;
+    top: -400 !important;
+  }
+}

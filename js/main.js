@@ -101,10 +101,29 @@ if (isLoggedIn) {
   $(".not-loggedIn-section").attr("hidden", false);
   $(".loggedIn-section").attr("hidden", true);
 }
+
 $(document).ready(function() {
   $(function() {
     //Calls the selectBoxIt method on your HTML select box.
     $("select").selectBoxIt();
+  });
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 50) {
+      $("#back-to-top").fadeIn();
+    } else {
+      $("#back-to-top").fadeOut();
+    }
+  });
+  // scroll body to 0px on click
+  $("#back-to-top").click(function() {
+    $("body,html").animate(
+      {
+        scrollTop: 0
+      },
+      400
+    );
+    return false;
   });
 });
 var searchFieldsLength = $(".search-fields>.row");
@@ -122,7 +141,7 @@ $("body").on("click", ".remove", function() {
     .parent()
     .parent()
     .parent()
-   
+
     .remove();
 });
 $(".record-selection").change(function() {
@@ -259,54 +278,41 @@ $("#datepickerTwoSelectBoxItContainer").on("click", function() {
           scrollTop: $(this).position().top
         });
     }
-})
-$("#datepickerOne").html(selectOptionsYear).selectBoxIt();
-$("#datepickerTwo").html(selectOptionsYear).selectBoxIt()
+  });
+  $("#datepickerOne")
+    .html(selectOptionsYear)
+    .selectBoxIt();
+  $("#datepickerTwo")
+    .html(selectOptionsYear)
+    .selectBoxIt();
 
-
-
-$("#datepickerOneSelectBoxItContainer").on("click", function () {
-
+  $("#datepickerOneSelectBoxItContainer").on("click", function() {
     list = $("ul#datepickerOneSelectBoxItOptions li");
-    list.each(function () {
-        if ($(this).data("id") == CurrentYearDatePickerID) {
-            $(this).css("background-color","#5c788f")
-           $(this).parent().animate({
-               scrollTop:$(this).position().top,
-           })
-        }
-    })
-
-})
-$("#datepickerTwoSelectBoxItContainer").on("click", function () {
-
+    list.each(function() {
+      if ($(this).data("id") == CurrentYearDatePickerID) {
+        $(this).css("background-color", "#5c788f");
+        $(this)
+          .parent()
+          .animate({
+            scrollTop: $(this).position().top
+          });
+      }
+    });
+  });
+  $("#datepickerTwoSelectBoxItContainer").on("click", function() {
     list = $("ul#datepickerTwoSelectBoxItOptions li");
-    list.each(function () {
-        if ($(this).data("id") == CurrentYearDatePickerID) {
-            $(this).css("background-color","#5c788f")
-           $(this).parent().animate({
-               scrollTop:$(this).position().top,
-           })
-        }
-    })
-
-})
-
+    list.each(function() {
+      if ($(this).data("id") == CurrentYearDatePickerID) {
+        $(this).css("background-color", "#5c788f");
+        $(this)
+          .parent()
+          .animate({
+            scrollTop: $(this).position().top
+          });
+      }
+    });
+  });
 });
 
-$(document).ready(function(){
-	$(window).scroll(function () {
-			if ($(this).scrollTop() > 50) {
-				$('#back-to-top').fadeIn();
-			} else {
-				$('#back-to-top').fadeOut();
-			}
-		});
-		// scroll body to 0px on click
-		$('#back-to-top').click(function () {
-			$('body,html').animate({
-				scrollTop: 0
-			}, 400);
-			return false;
-		});
-});
+// ADDED read
+$(document).ready(function() {});
