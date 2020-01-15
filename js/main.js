@@ -13,6 +13,19 @@ function getCookie(cname) {
   }
   return "";
 }
+
+function getPageSize() {
+  let currentURL = window.location.href;
+
+  // BY DEFAULT PAGE SIZE = 10
+  let pageSize = 10;
+  // IF PAGESIZE IS IN THE URL
+  if (currentURL.indexOf("PAGESIZE") !== -1) {
+    pageSize = currentURL.split("PAGESIZE=")[1];
+  }
+  return pageSize;
+}
+
 var selectOptionsYear = "";
 var yearCounter = 0;
 var CurrentYearDatePickerID = "";
@@ -103,9 +116,17 @@ if (isLoggedIn) {
 }
 
 $(document).ready(function() {
+  // PRINTINT FUNCTION
+  $("#resultsNumber option[value='100']").prop("selected", true);
+  // FOR DETAIL PAGE
+  $(".sort.printBtn").on("click", function() {
+    window.print();
+  });
   $(function() {
     //Calls the selectBoxIt method on your HTML select box.
-    $("select").selectBoxIt();
+    $("select").selectBoxIt({
+      showFirstOption: false
+    });
   });
 
   $(window).scroll(function() {
@@ -155,6 +176,18 @@ $(".bookmark").on("click", function(e) {
   var checkedItems = $("#bookmark-form input[type=checkbox]:checked");
   console.log(checkedItems.length);
   if (checkedItems.length > 0) {
+    $("form#bookmark-form").submit();
+  } else {
+    $("#noselection").modal("show");
+    e.preventDefault();
+    return false;
+  }
+});
+$("#deleteBookmark").on("click", function(e) {
+  var checkedItems = $("#bookmark-form input[type=checkbox]:checked");
+  console.log(checkedItems.length);
+  if (checkedItems.length > 0) {
+    console.log("test");
     $("form#bookmark-form").submit();
   } else {
     $("#noselection").modal("show");
