@@ -82,7 +82,7 @@ section#search img {
   text-align: center;
 }
 .card#advance-search .card-body .btn:not(.btn-primary) {
-  padding: 0 5px 2px;
+  padding: 6px 12px 6px 12px;
   color: #5c788f !important;
 }
 .card#advance-search .card-body .row {
@@ -501,10 +501,35 @@ span.help-modal-bread-crump i {
 }
 
 .back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
 }
 
+#resultsNumber {
+  /* width: 130px;
+  float: right !important;
+  margin: 5px 25px 0 0;
+  height: 30px;
+  border-radius: 5px; */
+}
 
+#pagination {
+  float: right !important;
+  margin-right: 25px;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print * {
+    visibility: visible !important;
+  }
+  .print {
+    position: absolute !important;
+    left: -330 !important;
+    top: -450 !important;
+    width: 100vw !important;
+  }
+}
