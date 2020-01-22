@@ -1,3 +1,6 @@
+window.addEventListener("beforeunload", function(e) {
+  window.alert("henlo");
+});
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
@@ -116,12 +119,21 @@ if (isLoggedIn) {
 }
 
 $(document).ready(function() {
-  // PRINTINT FUNCTION
+  // PRINTING FUNCTION
   $("#resultsNumber option[value='100']").prop("selected", true);
+
   // FOR DETAIL PAGE
   $(".sort.printBtn").on("click", function() {
     window.print();
   });
+
+  // SAVE CURRENT SEARCH
+  $(".save-search").on("click", function() {
+    console.log(HOME_SESSID);
+    let url = HOME_SESSID + '?SAVEHITS&APPLICATION=DESCRIPTION&REPORT=WEB_SUM_DESC'
+    console.log(url)
+  });
+
   $(function() {
     //Calls the selectBoxIt method on your HTML select box.
     $("select").selectBoxIt({

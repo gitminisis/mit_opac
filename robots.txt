@@ -1,2 +1,6 @@
 User-agent: *
 Disallow: /
+
+
+<button type="button" class="btn btn-default save-search" data-url="^searchresult^?savehits&application=DESCRIPTION&report=WEB_SUM_DESC">SAVE CURRENT<br /> SEARCH</button>
+
