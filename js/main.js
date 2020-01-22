@@ -104,7 +104,9 @@ if (isLoggedIn) {
 $(document).ready(function() {
   $(function() {
     //Calls the selectBoxIt method on your HTML select box.
+    $(".result-container").prepend('<div><select  onchange="location=this.options[this.selectedIndex].value;" style="  display: block !important; width:130px; float:right; margin: 5px 25px 0 0; height:30px; border-radius:5px;"><option> Results per page</option><option value = 25>25</option><option value =50>50</option><option value =100>100</option><option value =All>All</option></select></div>');
     $("select").selectBoxIt();
+   
   });
 });
 var searchFieldsLength = $(".search-fields>.row");
