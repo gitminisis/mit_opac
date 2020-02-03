@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@media only screen and (min-width: 1023px) {
+  #main-content {
+    padding: 20px 200px;
+  }
+}
+
+.summary-list-card {
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+}
+
+.summary-grid-card {
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
