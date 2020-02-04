@@ -1,35 +1,53 @@
 import React from "react";
 import PageLayout from "../../components/Layout";
 import { OnPageContext } from "../../context";
-import HomeCarousel from "../../components/HomeCarousel";
-import SearchBar from "../../components/Search";
-import { Typography, Row, Col, Layout } from "antd";
-const { Title, Paragraph } = Typography;
+import { Row, Col, Layout, Card, Button } from "antd";
 const { Content } = Layout;
-import { DESCRIPTION } from "../../messages";
+import "./index.css";
+import SimpleSearch from "./SimpleSearch";
+
 class Home extends React.Component {
   render() {
     let searchLink = document.getElementById("search-link");
     if (searchLink) {
       searchLink = searchLink.innerText;
     }
-    console.log(searchLink);
+
     return (
       <OnPageContext.Provider value="2">
         <PageLayout>
-          <Content style={{ padding: "0 24px", minHeight: "60vh" }}>
-            <Row type="flex" justify="center">
-              <Col xs={24} lg={12}>
-                <HomeCarousel />
-              </Col>
-            </Row>
-            <Title level={2}>Museum</Title>
-            <Typography.Text>{DESCRIPTION.museum}</Typography.Text>
-            <Row type="flex" gutter={32}>
-              <Col xs={24} lg={18}>
-                <SearchBar searchLink={searchLink} />
-              </Col>
-            </Row>
+          <Content>
+            <Card>
+              <Row gutter={24}>
+                <Col span={6}>
+                  <Button style={{ width: "100%" }}>Search</Button>{" "}
+                </Col>
+                <Col span={6}>
+                  <Button style={{ width: "100%" }}>
+                    Library &amp; Archives Catalog
+                  </Button>{" "}
+                </Col>
+                <Col span={6}>
+                  <Button style={{ width: "100%" }}>Laboratory History</Button>
+                </Col>
+                <Col span={6}>
+                  <Button style={{ width: "100%" }}>Exhibitions</Button>
+                </Col>
+              </Row>
+            </Card>
+            <Card
+              hoverable
+              style={{ width: "100%" }}
+              cover={
+                <img
+                  className="homeImage"
+                  alt="Banner Image"
+                  src="/m2a/src/assets/images/MWI_Header.png"
+                />
+              }
+            >
+              <SimpleSearch searchLink={searchLink} />
+            </Card>
           </Content>
         </PageLayout>
       </OnPageContext.Provider>

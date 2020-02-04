@@ -15,7 +15,10 @@ class PageLayout extends React.Component {
           <Layout>
             <Header />
 
-            <Layout id="main-content" style={{ backgroundColor: "white" }}>
+            <Layout
+              id="main-content"
+              style={{ backgroundColor: "white", padding: "50px" }}
+            >
               {/* <Breadcrumb pages={this.context} /> */}
               {this.props.children}
               <BackTop />
