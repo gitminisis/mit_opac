@@ -110,7 +110,7 @@ class Summary extends React.Component {
                   <Col span={24} style={{ padding: "0 15px 20px 15px" }}>
                     <SortBar />
                   </Col>
-                  <Col span={24}>
+                  <Col span={18} style={{ padding: "0 15px 20px 15px" }}>
                     {data.records.item.map(item => (
                       <Descriptions
                         bordered
@@ -150,6 +150,16 @@ class Summary extends React.Component {
                         </Descriptions.Item>
                       </Descriptions>
                     ))}
+                  </Col>
+                  <Col
+                    span={6}
+                    style={{
+                      backgroundColor: "#EBECEE",
+                      height: "400px",
+                      textAlign: "center"
+                    }}
+                  >
+                    <Button>Search Filter</Button>
                   </Col>
                 </Row>
               </Col>
