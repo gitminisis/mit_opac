@@ -26,11 +26,39 @@
 .sideBarCard .ant-card-head {
   background-color: #5c7f92 !important;
   color: white !important;
+
   font-weight: bold;
 }
 
 .sideBarCard .ant-card-body {
   background-color: #ccdadf !important;
+  padding: 10px !important;
+}
+
+#searchHistoryCard .ant-table-body {
+  margin: 0 !important;
+}
+
+#searchHistoryTable table {
+  font-size: 14px !important;
+}
+#searchHistoryTable thead {
+  background-color: #bebebe !important;
+  color: black !important;
+}
+#searchHistoryTable .ant-table-header-column {
+  font-weight: bold !important;
+}
+
+#searchHistoryTable .ant-table-row {
+  background-color: #ebecee !important;
+}
+#searchHistoryTable .ant-table-row td {
+  padding: 4px 8px 4px 8px !important;
+}
+
+#searchHistoryTable .ant-table-row td:first-child {
+  font-weight: bold !important;
 }
 .ant-tree-switcher {
   background-color: transparent !important;

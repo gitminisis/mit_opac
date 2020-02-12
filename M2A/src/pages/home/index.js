@@ -18,42 +18,13 @@ class Home extends React.Component {
       <PageLayout>
         <Content>
           <LoginModal visible={!isLoggedOn}></LoginModal>
-          <Card>
-            <Row gutter={24}>
-              <Col span={6}>
-                <Button style={{ width: "100%" }}>Search</Button>{" "}
-              </Col>
-              <Col span={6}>
-                <Button style={{ width: "100%" }}>
-                  Library &amp; Archives Catalog
-                </Button>{" "}
-              </Col>
-              <Col span={6}>
-                <Button style={{ width: "100%" }}>Laboratory History</Button>
-              </Col>
-              <Col span={6}>
-                <Button style={{ width: "100%" }}>Exhibitions</Button>
-              </Col>
-            </Row>
-          </Card>
-          <Card
-            hoverable
-            style={{ width: "100%" }}
-            cover={
-              <img
-                className="homeImage"
-                alt="Banner Image"
-                src="/m2a/src/assets/images/MWI_Header.png"
-              />
-            }
-          >
-            <Row>
-              <Col span={22} offset={1}>
-                {" "}
-                <SimpleSearch searchLink={searchLink} />
-              </Col>
-            </Row>
-          </Card>
+
+          <Row>
+            <Col span={22} offset={1}>
+              {" "}
+              <SimpleSearch searchLink={searchLink} />
+            </Col>
+          </Row>
         </Content>
       </PageLayout>
     );
