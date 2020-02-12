@@ -1,19 +1,46 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
-@media only screen and (min-width: 1023px) {
-  #main-content {
-  }
-}
-
-.summary-list-card {
-  margin-top: 25px !important;
-  margin-bottom: 25px !important;
-}
-
-.summary-grid-card {
-  margin-top: 12px !important;
-  margin-bottom: 12px !important;
-}
 
 * {
   font-family: "Open Sans", sans-serif;
+}
+
+#welcome-button {
+  width: 100% !important;
+  position: absolute !important;
+  top: 0 !important;
+}
+
+.homeImage {
+  height: 200px !important;
+}
+
+.sortButton {
+  padding: 0 2px 0 2px !important;
+  width: 100%;
+  font-size: 11px !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: #81687b !important;
+}
+
+.sideBarCard .ant-card-head {
+  background-color: #5c7f92 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.sideBarCard .ant-card-body {
+  background-color: #ccdadf !important;
+}
+.ant-tree-switcher {
+  background-color: transparent !important;
+  color: black !important;
+}
+
+.ant-descriptions-item-label {
+  width: 30% !important;
+  padding: 2px 10px 2px 10px !important;
+}
+.ant-descriptions-item-content {
+  padding: 2px 10px 2px 10px !important;
 }

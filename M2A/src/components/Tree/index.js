@@ -12,14 +12,13 @@ class TreeView extends React.Component {
           </TreeNode>
         );
       }
-      console.log(item);
+
       return <TreeNode key={item.title} {...item} dataRef={item} />;
     });
 
   render() {
-    console.log(TREE_DATA);
     return (
-      <DirectoryTree showLine showIcon={false}>
+      <DirectoryTree showLine showIcon={false} selectable={false}>
         {this.renderTreeNodes(TREE_DATA.data)}
       </DirectoryTree>
     );

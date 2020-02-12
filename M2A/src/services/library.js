@@ -28,7 +28,7 @@ export function extractSummaryData(data) {
         status: el.item_status,
         sisn: el.item_sisn,
         checkbox: el.item_checkbox
-      };
+      };3
     })
   };
 }
