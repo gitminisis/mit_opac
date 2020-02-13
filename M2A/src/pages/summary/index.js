@@ -19,6 +19,7 @@ import { isLogged } from "../../services/authentication";
 import Tree from "../../components/Tree";
 import SideBar from "./SideBar";
 import SortBar from "./SortBar";
+import Filter from "./Filter";
 
 class Summary extends React.Component {
   constructor(props) {
@@ -98,10 +99,13 @@ class Summary extends React.Component {
                     <Breadcrumb.Item>SEARCH RESULTS</Breadcrumb.Item>
                   </Breadcrumb>
                 </Col>
-                <Col span={24} style={{ padding: "20px 15px 10px 15px" }}>
+                <Col
+                  span={24}
+                  style={{ padding: "20px 15px 0px 15px", fontSize: "16px" }}
+                >
                   <p>
-                    Your search for {data.search_statement} returned{" "}
-                    {data.record_count} results.
+                    Your search for <strong>{data.search_statement}</strong>{" "}
+                    returned <strong>{data.record_count}</strong> results.
                   </p>
                 </Col>
                 <Col span={24} style={{ padding: "0 15px 20px 15px" }}>
@@ -118,7 +122,7 @@ class Summary extends React.Component {
                         label="LEVEL"
                         style={{ height: "30px" }}
                       >
-                        {item.item_level_desc.toUpperCase()}D
+                        {item.item_level_desc.toUpperCase()}
                       </Descriptions.Item>
                       <Descriptions.Item label="Title">
                         <a href={item.item_link}> {item.item_title}</a>
@@ -152,11 +156,11 @@ class Summary extends React.Component {
                   span={6}
                   style={{
                     backgroundColor: "#EBECEE",
-                    height: "400px",
-                    textAlign: "center"
+                    height: "400px"
                   }}
                 >
-                  <Button>Search Filter</Button>
+                  <Button id="searchFilterButton">SEARCH FILTER</Button>
+                  <Filter data={data.filters.div.xml.filter} />
                 </Col>
               </Row>
             </Col>

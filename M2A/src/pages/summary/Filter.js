@@ -1,29 +1,55 @@
 import React from "react";
-import { Menu, Layout, Icon, Drawer, Button } from "antd";
+import {
+  Menu,
+  Layout,
+  Icon,
+  Drawer,
+  Button,
+  Card,
+  Checkbox,
+  Row,
+  Col
+} from "antd";
 const { Sider, Content } = Layout;
 const { SubMenu } = Menu;
 class Filter extends React.Component {
   render() {
+    let filter = this.props.data;
+    console.log(filter);
     return (
-      <Sider theme="light" width={200} breakpoint="lg" collapsedWidth="0">
-        {" "}
-        <Menu mode="inline">
-          <SubMenu
-            key="sub1"
-            title={
-              <span>
-                <Icon type="user" />
-                subnav 1
-              </span>
-            }
+      <>
+        {filter.map(item_group => (
+          <Card
+            className="filterCard"
+            key={item_group._name}
+            headStyle={{
+              fontSize: "15px !important",
+              backgroundColor: "rgba(0,0,0,.03)"
+            }}
+            title={item_group._title.trim()}
+            extra={<Icon type="caret-down" />}
           >
-            <Menu.Item key="1">option1</Menu.Item>
-            <Menu.Item key="2">option2</Menu.Item>
-            <Menu.Item key="3">option3</Menu.Item>
-            <Menu.Item key="4">option4</Menu.Item>
-          </SubMenu>
-        </Menu>
-      </Sider>
+            <Row>
+              {item_group.item_group.map(item => (
+                <Col
+                  span={24}
+                  style={{ marginTop: "10px", marginBottom: "10px" }}
+                >
+                  {" "}
+                  <Checkbox
+                    checked={item.item_selected !== "N"}
+                    onClick={_ => {
+                      window.location = item.item_link;
+                    }}
+                  >
+                    {item.item_value} ({item.item_frequency})
+                  </Checkbox>
+                </Col>
+              ))}
+            </Row>
+          </Card>
+        ))}
+      </>
     );
   }
 }
