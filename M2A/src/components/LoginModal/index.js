@@ -37,19 +37,7 @@ class LoginModal extends React.Component {
         visible={this.props.visible}
         onOk={this.handleOk}
         onCancel={this.handleCancel}
-        footer={[
-          <Button key="back" onClick={this.handleCancel}>
-            Cancel
-          </Button>,
-          <Button
-            key="submit"
-            htmlType="submit"
-            type="primary"
-            onClick={this.handleOk}
-          >
-            Submit
-          </Button>
-        ]}
+        footer={null}
       >
         {" "}
         <Form

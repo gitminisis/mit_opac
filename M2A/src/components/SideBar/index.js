@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, Table } from "antd";
 const { Column } = Table;
-import Tree from "../../components/Tree";
+import Tree from "../Tree";
 import { getSearchHistory } from "../../services/searchHistory";
-import SearchHistory from "./SearchHistory";
+import SearchHistory from "../SearchHistory";
 
 class SideBar extends React.Component {
   render() {

@@ -1,0 +1,57 @@
+import React from "react";
+import { Descriptions } from "antd";
+class Data extends React.Component {
+  render() {
+    let item = this.props.data;
+
+    return (
+      <>
+        <Descriptions
+          bordered={this.props.bordered}
+          column={1}
+          className="summaryRecord"
+        >
+          <Descriptions.Item label="LEVEL">
+            {item.item_level_desc.toUpperCase()}
+          </Descriptions.Item>
+          <Descriptions.Item label="Title">
+            <a href={item.item_link}>
+              {" "}
+              <strong>{item.item_title}</strong>
+            </a>
+          </Descriptions.Item>
+          <Descriptions.Item label="Reference Code">
+            {item.item_id}
+          </Descriptions.Item>
+
+          {item.item_restrictions ? (
+            <Descriptions.Item label="Restrictions">
+              <strong> {item.item_restrictions}</strong>
+            </Descriptions.Item>
+          ) : null}
+
+          {item.item_date ? (
+            <Descriptions.Item label="Date">{item.item_date}</Descriptions.Item>
+          ) : null}
+
+          {item.item_box_group ? (
+            <Descriptions.Item label="Location/Box">
+              {item.item_box_group.map(box => {
+                return (
+                  <>
+                    {box.item_box_no
+                      ? `Location: ${box.item_box_no}`
+                      : `Box: ${box.item_container}`}
+                    <br />
+                  </>
+                );
+              })}
+            </Descriptions.Item>
+          ) : null}
+        </Descriptions>
+      </>
+    );
+  }
+}
+
+export default Data;

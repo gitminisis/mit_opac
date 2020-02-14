@@ -1,5 +1,5 @@
 import React from "react";
-import { List, Layout } from "antd";
+import { List, Layout, Button, Row, Col } from "antd";
 const { Footer } = Layout;
 import minisis from "../assets/images/minisis.png";
 
@@ -22,7 +22,14 @@ const footerNavigation = [
 class PageFooter extends React.Component {
   render() {
     return (
-      <Footer style={{ textAlign: "center", backgroundColor: "white" }}>
+      <Footer
+        style={{
+          textAlign: "center",
+          backgroundColor: "#5c7f92",
+          color: "white",
+         
+        }}
+      >
         <p>
           All content within the archives collections is For Laboratory Use Only
           unless otherwise noted.
@@ -32,13 +39,17 @@ class PageFooter extends React.Component {
           the Archives at x2312 |
           <a href="mailto:archives@ll.mit.edu">archives@ll.mit.edu</a>
         </p>
-        <img src={minisis} style={{ width: "200px", height: "auto" }} />
+        <img src={minisis} style={{ width: "200px", height: "auto", marginTop:'20xp', marginBottom:'20px' }} />
         <p>&copy; 2019 Minisis Inc. All Rights Reserved.</p>
-        <List
+        {/* <List
           grid={{ gutter: 4, column: 4 }}
           dataSource={footerNavigation}
-          renderItem={item => <List.Item>{item.title}</List.Item>}
-        />
+          renderItem={item => (
+            <List.Item>
+              <Button>{item.title}</Button>
+            </List.Item>
+          )}
+        /> */}
       </Footer>
     );
   }

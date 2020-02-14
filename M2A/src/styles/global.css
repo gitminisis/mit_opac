@@ -38,7 +38,9 @@
 #searchHistoryCard .ant-table-body {
   margin: 0 !important;
 }
-
+#searchHistoryTable {
+  margin-bottom: 10px;
+}
 #searchHistoryTable table {
   font-size: 14px !important;
 }
@@ -91,4 +93,70 @@
   font-size: 17px !important;
   border: none !important;
   border-radius: 0 !important;
+}
+
+.summaryRecord {
+  margin-bottom: 30px;
+}
+.summaryRecord .ant-descriptions-item-label {
+  font-weight: bold !important;
+}
+
+#summary .ant-tree-switcher-line-icon {
+  margin-top: 5px !important;
+}
+
+#generalDetailData .ant-descriptions-item {
+  padding-bottom: 0 !important;
+}
+
+.detailRow {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.detailRowTitle {
+  color: #5c788f !important;
+  font-weight: bold !important;
+}
+.detailRowContent {
+  background-color: whitesmoke !important;
+}
+
+#generalDetailData td {
+  font-size: 1rem !important;
+}
+
+#banner {
+  font-weight: bold;
+  color: #5c788f;
+  font-size: 2.5rem;
+  line-height: 1.15;
+}
+
+#searchSubmitBtn {
+  background-color: #81687b !important;
+  color: white !important;
+  font-weight: bold !important;
+  border: none !important;
+}
+
+#searchSubmitBtn:hover,
+.sortButton:hover {
+  background-color: #977c91 !important;
+  border: none !important;
+}
+
+#breadcrumb a {
+  font-size: 16px !important;
+
+  font-weight: bold !important;
+}
+
+#breadcrumb a:hover {
+  color: #5c788f !important;
+}
+
+.filterCol span {
+  font-size: 13px !important;
 }

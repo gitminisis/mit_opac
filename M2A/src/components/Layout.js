@@ -11,16 +11,19 @@ class PageLayout extends React.Component {
   render() {
     return (
       <Row style={{ background: "darkgray" }}>
-        <Col span={18} offset={3}>
+        <Col span={20} offset={2}>
           <Layout>
             <Header />
 
             <Layout
               id="main-content"
-              style={{ backgroundColor: "white", padding: "50px" }}
+              style={{
+                backgroundColor: "white",
+                padding: "50px"
+              }}
             >
               {/* <Breadcrumb pages={this.context} /> */}
-              <Card>
+              <Card style={{ marginTop: "50px" }}>
                 <Row gutter={24}>
                   <Col span={6}>
                     <Button style={{ width: "100%" }}>Search</Button>{" "}

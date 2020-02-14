@@ -60,7 +60,12 @@ class SearchBar extends React.Component {
             <Search
               name="KEYWORD_CL"
               placeholder="Search Term"
-              enterButton="Search"
+              enterButton={
+                <Button type="submit" id="searchSubmitBtn">
+                  {" "}
+                  Search
+                </Button>
+              }
               onSearch={value =>
                 document.getElementById("searchBarForm").submit()
               }

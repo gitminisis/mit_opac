@@ -7,10 +7,18 @@ class PageHeader extends React.Component {
   render() {
     return (
       <>
-        <Header style={{ backgroundColor: "white" }}>
+        <Header
+          style={{
+            backgroundColor: "white",
+            paddingTop: "30px",
+            paddingBottom: "20px"
+          }}
+        >
           {" "}
           <Row gutter={0}>
-            <Col lg={8}></Col>
+            <Col lg={8} id="banner">
+              ARCHIVES <br /> COLLECTIONS
+            </Col>
             <Col lg={16}>
               <SearchBar />
             </Col>

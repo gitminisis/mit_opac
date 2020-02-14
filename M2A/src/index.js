@@ -7,14 +7,12 @@ import ReactDom from "react-dom";
 // import LibraryDetail from "./pages/library-detail";
 import Summary from "./pages/summary";
 import Home from "./pages/home";
+import Detail from "./pages/detail";
+import { isLogged } from "./services/authentication";
 if (document.getElementById("home")) {
   ReactDom.render(<Home />, document.getElementById("home"));
-}
-
-if (document.getElementById("summary")) {
+} else if (document.getElementById("summary")) {
   ReactDom.render(<Summary />, document.getElementById("summary"));
+} else if (document.getElementById("detail")) {
+  ReactDom.render(<Detail />, document.getElementById("detail"));
 }
-
-// if (document.getElementById("detail_biblio")) {
-//   ReactDom.render(<LibraryDetail />, document.getElementById("detail_biblio"));
-// }

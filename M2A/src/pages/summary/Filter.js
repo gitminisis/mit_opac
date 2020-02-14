@@ -33,7 +33,11 @@ class Filter extends React.Component {
               {item_group.item_group.map(item => (
                 <Col
                   span={24}
-                  style={{ marginTop: "10px", marginBottom: "10px" }}
+                  className="filterCol"
+                  style={{
+                    marginTop: "10px",
+                    marginBottom: "10px"
+                  }}
                 >
                   {" "}
                   <Checkbox

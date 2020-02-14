@@ -39,6 +39,7 @@ class SearchBar extends React.Component {
             <Col xs={24} lg={6}>
               <Form.Item>
                 <Button
+                 
                   type="primary"
                   htmlType="submit"
                   className="login-form-button"
