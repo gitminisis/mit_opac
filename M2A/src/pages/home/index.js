@@ -17,8 +17,6 @@ class Home extends React.Component {
     return (
       <PageLayout>
         <Content>
-          <LoginModal visible={!isLoggedOn}></LoginModal>
-
           <Row>
             <Col span={22} offset={1}>
               {" "}

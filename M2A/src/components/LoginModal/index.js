@@ -18,18 +18,19 @@ class LoginModal extends React.Component {
     this.setState({
       visible: false
     });
+    this.props.closeHandler();
+    this.clearForm();
   };
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log("henlo");
-    console.log(e);
-    // this.props.form.validateFields((err, values) => {
-    //   if (!err) {
-    //     console.log("Received values of form: ", values);
-    //   }
-    // });
+
+  clearForm = _ => {
+    console.log("lele");
+    console.log(document.getElementById("usernameInput").value);
+    document.getElementById("usernameInput").setAttribute("value", "");
+    document.getElementById("passwordInput").setAttribute("value", "");
   };
+
   render() {
+    const WrappedLoginForm = Form.create()(LoginForm);
     return (
       <Modal
         title="Login"
@@ -39,36 +40,60 @@ class LoginModal extends React.Component {
         onCancel={this.handleCancel}
         footer={null}
       >
-        {" "}
-        <Form
-          onSubmit={_ => this.handleSubmit}
-          id="logon-form"
-          layout="vertical"
-          action="http://mit.minisisinc.com/scripts/mwimain.dll?logon&application=UNION_VIEW&LANGUAGE=144&file=[MIT_ROOT]home.html&cookie=BOOKMARK"
-          method="POST"
-        >
-          <Form.Item>
-            <Input
-              prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-              placeholder="Username"
-              name="USERNAME"
-            />
-          </Form.Item>
-          <Form.Item>
-            <Input
-              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
-              type="password"
-              placeholder="Password"
-              name="USERPASSWORD"
-            />
-          </Form.Item>
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Log in
-            </Button>
-          </Form.Item>
-        </Form>
+        <WrappedLoginForm />
       </Modal>
+    );
+  }
+}
+
+class LoginForm extends React.Component {
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log("henlo");
+    console.log(e);
+    this.props.form.resetFields();
+    // this.props.form.validateFields((err, values) => {
+    //   if (!err) {
+    //     console.log("Received values of form: ", values);
+    //   }
+    // });
+  };
+  render() {
+    return (
+      <Form
+        onSubmit={_ => this.handleSubmit}
+        id="logon-form"
+        layout="vertical"
+        action="http://mit.minisisinc.com/scripts/mwimain.dll?logon&application=UNION_VIEW&LANGUAGE=144&file=[MIT_ROOT]home.html&cookie=BOOKMARK"
+        method="POST"
+      >
+        <Form.Item>
+          <Input
+            prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+            placeholder="Username"
+            name="USERNAME"
+            required
+            allowClear
+            id="usernameInput"
+          />
+        </Form.Item>
+        <Form.Item>
+          <Input
+            prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+            type="password"
+            allowClear
+            placeholder="Password"
+            name="USERPASSWORD"
+            id="passwordInput"
+            required
+          />
+        </Form.Item>
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Log in
+          </Button>
+        </Form.Item>
+      </Form>
     );
   }
 }

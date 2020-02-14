@@ -42,7 +42,7 @@ class Detail extends React.Component {
                   span={24}
                   style={{
                     background: "#CED1D0",
-                    padding: "18px 15px 17px 15px"
+                    padding: "18px 15px 14px 15px"
                   }}
                 >
                   {" "}

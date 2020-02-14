@@ -3,10 +3,10 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Sider from "./Sider";
 import { Layout, Menu, Row, Col, Card, Button } from "antd";
-import Breadcrumb from "./Breadcrumb";
+
 const { Content } = Layout;
 import { BackTop } from "antd";
-import { BreadcrumbContext } from "../context";
+
 class PageLayout extends React.Component {
   render() {
     return (
@@ -22,7 +22,6 @@ class PageLayout extends React.Component {
                 padding: "50px"
               }}
             >
-              {/* <Breadcrumb pages={this.context} /> */}
               <Card style={{ marginTop: "50px" }}>
                 <Row gutter={24}>
                   <Col span={6}>
@@ -67,5 +66,5 @@ class PageLayout extends React.Component {
     );
   }
 }
-PageLayout.contextType = BreadcrumbContext;
+
 export default PageLayout;

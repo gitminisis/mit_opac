@@ -1,8 +1,9 @@
 import React from "react";
-import { Tabs } from "antd";
+import { Tabs, Row, Col, Card, Icon, Tooltip } from "antd";
 import DataRow from "./DataRow";
 
 const { TabPane } = Tabs;
+const { Meta } = Card;
 class DetailData extends React.Component {
   render() {
     let data = this.props.data;
@@ -40,9 +41,84 @@ class DetailData extends React.Component {
           ></DataRow>
         </TabPane>
         <TabPane tab={<strong>DIGITAL ASSETS</strong>} key="2">
-          Content of Tab Pane 2
+          <Row gutter={16}>
+            <Col span={8}>
+              <Card
+                hoverable
+                style={{ width: 240 }}
+                cover={
+                  <img
+                    alt="example"
+                    src="https://cdn.vox-cdn.com/thumbor/rowh9pZ4aD7IAbAUxjN4NhxVJY0=/0x0:639x426/1200x800/filters:focal(269x162:371x264)/cdn.vox-cdn.com/uploads/chorus_image/image/61774029/MIT_Computer_Announce_01_0.0.jpg"
+                  />
+                }
+                actions={[
+                  <Tooltip title="Download">
+                    <Icon type="download" />
+                  </Tooltip>,
+                  <Tooltip title="Save">
+                    <Icon type="save" />
+                  </Tooltip>,
+                  <Tooltip title="Share">
+                    <Icon type="share-alt" />
+                  </Tooltip>
+                ]}
+              >
+                <Meta title="MIT Campus" description="MIT Campus" />
+              </Card>
+            </Col>
+            <Col span={8}>
+              <Card
+                hoverable
+                style={{ width: 240 }}
+                cover={
+                  <img
+                    alt="example"
+                    src="https://cdn.vox-cdn.com/thumbor/rowh9pZ4aD7IAbAUxjN4NhxVJY0=/0x0:639x426/1200x800/filters:focal(269x162:371x264)/cdn.vox-cdn.com/uploads/chorus_image/image/61774029/MIT_Computer_Announce_01_0.0.jpg"
+                  />
+                }
+                actions={[
+                  <Tooltip title="Download">
+                    <Icon type="download" />
+                  </Tooltip>,
+                  <Tooltip title="Save">
+                    <Icon type="save" />
+                  </Tooltip>,
+                  <Tooltip title="Share">
+                    <Icon type="share-alt" />
+                  </Tooltip>
+                ]}
+              >
+                <Meta title="MIT Campus" description="MIT Campus" />
+              </Card>
+            </Col>
+            <Col span={8}>
+              <Card
+                hoverable
+                style={{ width: 240 }}
+                cover={
+                  <img
+                    alt="example"
+                    src="https://cdn.vox-cdn.com/thumbor/rowh9pZ4aD7IAbAUxjN4NhxVJY0=/0x0:639x426/1200x800/filters:focal(269x162:371x264)/cdn.vox-cdn.com/uploads/chorus_image/image/61774029/MIT_Computer_Announce_01_0.0.jpg"
+                  />
+                }
+                actions={[
+                  <Tooltip title="Download">
+                    <Icon type="download" />
+                  </Tooltip>,
+                  <Tooltip title="Save">
+                    <Icon type="save" />
+                  </Tooltip>,
+                  <Tooltip title="Share">
+                    <Icon type="share-alt" />
+                  </Tooltip>
+                ]}
+              >
+                <Meta title="MIT Campus" description="MIT Campus" />
+              </Card>
+            </Col>
+          </Row>
         </TabPane>
-      
       </Tabs>
     );
   }

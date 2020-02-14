@@ -5,6 +5,23 @@ import { isLogged } from "../../services/authentication";
 import LoginModal from "../LoginModal";
 import { logout } from "../../services/logout";
 class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false
+    };
+  }
+  openModal = _ => {
+    this.setState({
+      showModal: true
+    });
+  };
+  closeModal = _ => {
+    this.setState({
+      showModal: false
+    });
+  };
+
   render() {
     let isLoggedOn = isLogged();
 
@@ -14,6 +31,10 @@ class SearchBar extends React.Component {
 
     return (
       <Row gutter={0}>
+        <LoginModal
+          visible={this.state.showModal}
+          closeHandler={this.closeModal}
+        ></LoginModal>
         {isLoggedOn ? (
           <>
             {" "}
@@ -44,7 +65,9 @@ class SearchBar extends React.Component {
         ) : (
           <Col span={6}>
             {" "}
-            <Button id="welcome-button">Login</Button>
+            <Button id="welcome-button" onClick={_ => this.openModal()}>
+              Login
+            </Button>
           </Col>
         )}
 

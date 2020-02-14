@@ -67,14 +67,20 @@ class Summary extends React.Component {
                   span={24}
                   style={{
                     background: "#CED1D0",
-                    padding: "18px 15px 17px 15px"
+                    padding: "18px 15px 14px 15px"
                   }}
                 >
                   {" "}
-                  <Breadcrumb separator="">
-                    <Breadcrumb.Item>HOME</Breadcrumb.Item>
+                  <Breadcrumb separator=""  id="breadcrumb">
+                    <Breadcrumb.Item
+                      href={`${
+                        document.getElementById("session-id").innerText
+                      }?get&file=[MIT_ROOT]home.html`}
+                    >
+                      HOME
+                    </Breadcrumb.Item>
                     <Breadcrumb.Separator>></Breadcrumb.Separator>
-                    <Breadcrumb.Item>SEARCH RESULTS</Breadcrumb.Item>
+                    <Breadcrumb.Item href="#">SEARCH RESULTS</Breadcrumb.Item>
                   </Breadcrumb>
                 </Col>
                 <Col

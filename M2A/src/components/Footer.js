@@ -26,8 +26,7 @@ class PageFooter extends React.Component {
         style={{
           textAlign: "center",
           backgroundColor: "#5c7f92",
-          color: "white",
-         
+          color: "white"
         }}
       >
         <p>
@@ -37,9 +36,22 @@ class PageFooter extends React.Component {
         <p>
           Have a question? See someone you know? Have material for us? Contact
           the Archives at x2312 |
-          <a href="mailto:archives@ll.mit.edu">archives@ll.mit.edu</a>
+          <a
+            style={{ color: "white", fontWeight: "bold" }}
+            href="mailto:archives@ll.mit.edu"
+          >
+            archives@ll.mit.edu
+          </a>
         </p>
-        <img src={minisis} style={{ width: "200px", height: "auto", marginTop:'20xp', marginBottom:'20px' }} />
+        <img
+          src={minisis}
+          style={{
+            width: "200px",
+            height: "auto",
+            marginTop: "20xp",
+            marginBottom: "20px"
+          }}
+        />
         <p>&copy; 2019 Minisis Inc. All Rights Reserved.</p>
         {/* <List
           grid={{ gutter: 4, column: 4 }}
