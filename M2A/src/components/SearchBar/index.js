@@ -81,6 +81,9 @@ class SearchBar extends React.Component {
           >
             {" "}
             <Search
+              prefix={
+                <Icon type="search" style={{ color: "rgba(0,0,0,.25)" }} />
+              }
               name="KEYWORD_CL"
               placeholder="Search Term"
               enterButton={

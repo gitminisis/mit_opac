@@ -45,15 +45,18 @@ class SimpleSearch extends React.Component {
       <>
         <Card
           bodyStyle={{ textAlign: "center" }}
-          style={{ marginTop: 16 }}
+          style={{ marginTop: 16, marginBottom: "30px" }}
           type="inner"
-          title="SIMPLE SEARCH"
+          title={<strong>SIMPLE SEARCH</strong>}
         >
-          <p>Please login first to begin you search</p>
+          <p>
+            <strong>Please login first to begin you search</strong>
+          </p>
           <Row gutter={4}>
-            <Col span={22} offset={1}>
+            <Col span={22} offset={1} style={{ marginBottom: "50px" }}>
               {" "}
               <Form
+                id="simpleSearch"
                 layout="inline"
                 action={action}
                 className="login-form"
@@ -61,38 +64,25 @@ class SimpleSearch extends React.Component {
                 onSubmit={e => {
                   console.log(e);
                 }}
+                style={{ width: "100%" }}
               >
-                <Col xs={24} lg={18}>
-                  <Form.Item
-                    wrapperCol={{ xs: 24, lg: 24 }}
-                    style={{ width: "100%" }}
-                  >
-                    <Input
-                      onPressEnter={true}
-                      allowClear={true}
-                      name="KEYWORD_CL"
-                      prefix={
-                        <Icon
-                          type="search"
-                          style={{ color: "rgba(0,0,0,.25)" }}
-                        />
-                      }
-                      type="text"
-                      placeholder="Search Keyword"
-                    />
-                  </Form.Item>
-                </Col>
-                <Col xs={24} lg={6}>
-                  <Form.Item>
-                    <Button
-                      type="primary"
-                      htmlType="submit"
-                      className="login-form-button"
-                    >
+                <Search
+                  prefix={
+                    <Icon type="search" style={{ color: "rgba(0,0,0,.25)" }} />
+                  }
+                  allowClear={true}
+                  name="KEYWORD_CL"
+                  placeholder="Search Term"
+                  enterButton={
+                    <Button type="submit" id="searchSubmitBtn">
+                      {" "}
                       Search
                     </Button>
-                  </Form.Item>
-                </Col>
+                  }
+                  onSearch={value =>
+                    document.getElementById("simpleSearch").submit()
+                  }
+                />
               </Form>
             </Col>
           </Row>
