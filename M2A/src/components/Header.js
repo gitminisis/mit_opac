@@ -16,7 +16,15 @@ class PageHeader extends React.Component {
         >
           {" "}
           <Row gutter={0}>
-            <Col lg={8} id="banner">
+            <Col
+              lg={8}
+              id="banner"
+              style={{ cursor: "pointer" }}
+              onClick={_ =>
+                (window.location =
+                  "http://mit.minisisinc.com/scripts/mwimain.dll?get&file=[MIT_ROOT]home.html")
+              }
+            >
               ARCHIVES <br /> COLLECTIONS
             </Col>
             <Col lg={16}>

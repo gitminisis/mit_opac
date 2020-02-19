@@ -8,6 +8,7 @@ import ReactDom from "react-dom";
 import Summary from "./pages/summary";
 import Home from "./pages/home";
 import Detail from "./pages/detail";
+import AdvancedSearch from "./pages/advancedSearch";
 import { isLogged } from "./services/authentication";
 if (document.getElementById("home")) {
   ReactDom.render(<Home />, document.getElementById("home"));
@@ -15,4 +16,6 @@ if (document.getElementById("home")) {
   ReactDom.render(<Summary />, document.getElementById("summary"));
 } else if (document.getElementById("detail")) {
   ReactDom.render(<Detail />, document.getElementById("detail"));
+} else if (document.getElementById("advanced")) {
+  ReactDom.render(<AdvancedSearch />, document.getElementById("advanced"));
 }

@@ -60,7 +60,7 @@ class DetailData extends React.Component {
                     <Icon type="save" />
                   </Tooltip>,
                   <Tooltip title="Share">
-                    <Icon type="share-alt" />
+                         <Icon type="link" />
                   </Tooltip>
                 ]}
               >
@@ -85,7 +85,7 @@ class DetailData extends React.Component {
                     <Icon type="save" />
                   </Tooltip>,
                   <Tooltip title="Share">
-                    <Icon type="share-alt" />
+                         <Icon type="link" />
                   </Tooltip>
                 ]}
               >
@@ -110,7 +110,7 @@ class DetailData extends React.Component {
                     <Icon type="save" />
                   </Tooltip>,
                   <Tooltip title="Share">
-                    <Icon type="share-alt" />
+              <Icon type="link" />
                   </Tooltip>
                 ]}
               >

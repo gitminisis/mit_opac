@@ -5,16 +5,20 @@ class TopBar extends React.Component {
     let data = this.props.data;
     return (
       <Row gutter={4}>
-        <Col span={6}>
-          {" "}
-          <Button
-            className="sortButton"
-            style={{ width: "100%" }}
-            href={data.return_summary.a._href}
-          >
-            BACK TO SEARCH RESULTS
-          </Button>
-        </Col>
+        {data.return_summary ? (
+          <Col span={6}>
+            <Button
+              className="sortButton"
+              style={{ width: "100%" }}
+              href={data.return_summary.a._href}
+            >
+              BACK TO SEARCH RESULTS
+            </Button>{" "}
+          </Col>
+        ) : (
+          <></>
+        )}
+
         {data.prev_page ? (
           <Col span={5}>
             <Button

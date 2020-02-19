@@ -1,6 +1,19 @@
 import React from "react";
 import { Descriptions } from "antd";
 class Data extends React.Component {
+  getBoxGroup = item_box_group => {
+    let box_group = [];
+    let box_group_length = item_box_group.length;
+    for (let i = 0; i < box_group_length / 2; i++) {
+      let item = {
+        item_box_no: item_box_group[i].item_box_no,
+        item_container: item_box_group[i + box_group_length / 2].item_container
+      };
+      box_group.push(item);
+    }
+    return box_group;
+  };
+
   render() {
     let item = this.props.data;
 
@@ -36,14 +49,21 @@ class Data extends React.Component {
 
           {item.item_box_group ? (
             <Descriptions.Item label="Location/Box">
-              {item.item_box_group.map(box => {
+              {this.getBoxGroup(item.item_box_group).map(box => {
+                console.log(box);
                 return (
-                  <>
-                    {box.item_box_no
-                      ? `Location: ${box.item_box_no}`
-                      : `Box: ${box.item_container}`}
-                    <br />
-                  </>
+                  <Descriptions column={2} className="boxDescription">
+                    <Descriptions.Item
+                      label="Location"
+                      className="boxLocationDescription"
+                    >
+                      {box.item_container}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Box">
+                      {" "}
+                      {box.item_box_no}
+                    </Descriptions.Item>
+                  </Descriptions>
                 );
               })}
             </Descriptions.Item>

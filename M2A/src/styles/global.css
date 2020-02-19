@@ -160,3 +160,19 @@
 .filterCol span {
   font-size: 13px !important;
 }
+
+.boxDescription .ant-descriptions-item-label {
+  background: white !important;
+  border: none !important;
+}
+
+.boxDescription .ant-descriptions-item {
+  padding-bottom: 1px !important;
+}
+.boxLocationDescription {
+  border-right: solid grey 1px !important;
+}
+
+.boxDescription {
+  margin-bottom: 3px !important;
+}

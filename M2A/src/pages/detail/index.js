@@ -54,10 +54,15 @@ class Detail extends React.Component {
                     >
                       HOME
                     </Breadcrumb.Item>
-                    <Breadcrumb.Separator>></Breadcrumb.Separator>
-                    <Breadcrumb.Item href={data.return_summary.a._href}>
-                      SEARCH RESULTS
-                    </Breadcrumb.Item>
+                    {data.return_summary ? (
+                      <>
+                        {" "}
+                        <Breadcrumb.Separator>></Breadcrumb.Separator>
+                        <Breadcrumb.Item href={data.return_summary.a._href}>
+                          SEARCH RESULTS
+                        </Breadcrumb.Item>
+                      </>
+                    ) : null}
                     <Breadcrumb.Separator>></Breadcrumb.Separator>
                     <Breadcrumb.Item href="#">RECORD VIEW</Breadcrumb.Item>
                   </Breadcrumb>

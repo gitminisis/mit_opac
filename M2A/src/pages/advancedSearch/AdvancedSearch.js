@@ -47,7 +47,7 @@ class SimpleSearch extends React.Component {
           bodyStyle={{ textAlign: "center" }}
           style={{ marginTop: 16, marginBottom: "30px" }}
           type="inner"
-          title={<strong>SIMPLE SEARCH</strong>}
+          title={<strong>ADVANCED SEARCH</strong>}
         >
           <p>
             <strong>Please login first to begin you search</strong>
@@ -94,15 +94,7 @@ class SimpleSearch extends React.Component {
               </Button>
             </Col>
             <Col span={8}>
-              <Button
-                style={{ width: "75%" }}
-                onClick={_ =>
-                  (window.location =
-                    "http://mit.minisisinc.com/scripts/mwimain.dll?get&file=[MIT_ROOT]advance-page.html")
-                }
-              >
-                Advanced Search
-              </Button>
+              <Button style={{ width: "75%" }}>Advanced Search</Button>
             </Col>
             <Col span={8}>
               <Button style={{ width: "75%" }}>Help</Button>
