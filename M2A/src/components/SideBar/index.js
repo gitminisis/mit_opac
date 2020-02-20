@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Table, Button, Tooltip } from "antd";
+import { Card, Table, Button, Tooltip, Popconfirm } from "antd";
 const { Column } = Table;
 import Tree from "../Tree";
 import { getSearchHistory } from "../../services/searchHistory";
@@ -54,18 +54,29 @@ class SideBar extends React.Component {
                 SAVED SEARCH
               </Button>
             </Tooltip>{" "}
-            <Button
-              size="large"
-              className="accountButton"
-              style={{ width: "75%", marginBottom: "30px" }}
-              onClick={_ =>
+            <Popconfirm
+              placement="bottom"
+              title={
+                <span>
+                  You might lose your saved bag. <br /> Do you want to logout ?
+                </span>
+              }
+              onConfirm={_ => {
                 logout(sessionId).then(res => {
                   window.location = "/";
-                })
-              }
+                });
+              }}
+              okText="Yes"
+              cancelText="No"
             >
-              LOGOUT
-            </Button>
+              <Button
+                size="large"
+                className="accountButton"
+                style={{ width: "75%", marginBottom: "30px" }}
+              >
+                LOGOUT
+              </Button>
+            </Popconfirm>
           </Card>
         </div>
       </>

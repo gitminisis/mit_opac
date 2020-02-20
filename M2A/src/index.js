@@ -8,7 +8,7 @@ import ReactDom from "react-dom";
 import Summary from "./pages/summary";
 import Home from "./pages/home";
 import Detail from "./pages/detail";
-import AdvancedSearch from "./pages/advancedSearch";
+import AdvancedSearch from "./pages/advanced-search";
 import { isLogged } from "./services/authentication";
 import NoRecord from "./pages/no-record";
 import ViewBag from "./pages/view-bag";

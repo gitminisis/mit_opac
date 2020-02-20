@@ -4,6 +4,7 @@ import DataRow from "./DataRow";
 
 const { TabPane } = Tabs;
 const { Meta } = Card;
+import { save } from "../../services/savedBag";
 class DetailData extends React.Component {
   render() {
     let data = this.props.data;
@@ -46,14 +47,74 @@ class DetailData extends React.Component {
         </TabPane>
         <TabPane tab={<strong>DIGITAL ASSETS</strong>} key="2">
           <Row gutter={16}>
-            <Col span={8}>
+            <Col lg={8} md={24}>
               <Card
                 hoverable
-                style={{ width: 240, margin: "0 auto" }}
+                style={{ width: "100%", margin: "0 auto" }}
                 cover={
                   <img
+                    style={{ objectFit: "scale-down", height: "200px" }}
                     alt="example"
                     src="https://cdn.vox-cdn.com/thumbor/rowh9pZ4aD7IAbAUxjN4NhxVJY0=/0x0:639x426/1200x800/filters:focal(269x162:371x264)/cdn.vox-cdn.com/uploads/chorus_image/image/61774029/MIT_Computer_Announce_01_0.0.jpg"
+                  />
+                }
+                actions={[
+                  <Tooltip title="Download">
+                    <Icon type="download" />
+                  </Tooltip>,
+                  <Tooltip title="Save To Bag">
+                    <Icon
+                      type="save"
+                      onClick={_ => {
+                        save(
+                          "https://cdn.vox-cdn.com/thumbor/rowh9pZ4aD7IAbAUxjN4NhxVJY0=/0x0:639x426/1200x800/filters:focal(269x162:371x264)/cdn.vox-cdn.com/uploads/chorus_image/image/61774029/MIT_Computer_Announce_01_0.0.jpg"
+                        );
+                      }}
+                    />
+                  </Tooltip>,
+                  <Tooltip title="Copy URL">
+                    <Icon type="link" />
+                  </Tooltip>
+                ]}
+              >
+                <Meta title="MIT Campus" description="MIT Campus" />
+              </Card>
+            </Col>
+            <Col lg={8} md={24}>
+              <Card
+                hoverable
+                style={{ width: "100%", margin: "0 auto" }}
+                cover={
+                  <img
+                    style={{ objectFit: "scale-down", height: "200px" }}
+                    alt="example"
+                    src="https://s3.amazonaws.com/files.technologyreview.com/p/pub/images/1565670471100457bd2c9b.jpg"
+                  />
+                }
+                actions={[
+                  <Tooltip title="Download">
+                    <Icon type="download" />
+                  </Tooltip>,
+                  <Tooltip title="Save To Bag">
+                    <Icon type="save" />
+                  </Tooltip>,
+                  <Tooltip title="Copy URL">
+                    <Icon type="link" />
+                  </Tooltip>
+                ]}
+              >
+                <Meta title="MIT Campus" description="MIT Campus" />
+              </Card>
+            </Col>
+            <Col lg={8} md={24}>
+              <Card
+                hoverable
+                style={{ width: "100%", margin: "0 auto" }}
+                cover={
+                  <img
+                    style={{ objectFit: "scale-down", height: "200px" }}
+                    alt="example"
+                    src="https://math.mit.edu/images/simons850.jpg"
                   />
                 }
                 actions={[

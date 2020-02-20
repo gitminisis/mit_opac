@@ -8,7 +8,8 @@ import {
   Menu,
   Dropdown,
   Icon,
-  DatePicker
+  DatePicker,
+  Popconfirm
 } from "antd";
 const { Search } = Input;
 import { isLogged } from "../../services/authentication";
@@ -54,19 +55,28 @@ class SearchBar extends React.Component {
                   <Menu style={{ textAlign: "center" }}>
                     <Menu.Item key="1">Saved Bag</Menu.Item>
                     <Menu.Item key="2">Saved Search</Menu.Item>
-                    <Menu.Item
-                      key="3"
-                      onClick={_ =>
-                        logout(sessionId).then(res => {
-                          window.location = "/";
-                        })
-                      }
-                    >
+                    <Menu.Item key="3">
                       {" "}
-                      <Button type="danger" ghost>
-                        {" "}
-                        Logout
-                      </Button>
+                      <Popconfirm
+                        placement="top"
+                        title={
+                          <span>
+                            You might lose your saved bag. <br /> Do you want to
+                            logout ?
+                          </span>
+                        }
+                        onConfirm={_ => {
+                          logout(sessionId).then(res => {
+                            window.location = "/";
+                          });
+                        }}
+                        okText="Yes"
+                        cancelText="No"
+                      >
+                        <Button type="danger" ghost>
+                          LOGOUT
+                        </Button>
+                      </Popconfirm>
                     </Menu.Item>
                   </Menu>
                 }
