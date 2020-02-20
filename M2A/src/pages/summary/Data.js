@@ -54,12 +54,12 @@ class Data extends React.Component {
                 return (
                   <Descriptions column={2} className="boxDescription">
                     <Descriptions.Item
-                      label="Location"
+                      label="Location:"
                       className="boxLocationDescription"
                     >
                       {box.item_container}
                     </Descriptions.Item>
-                    <Descriptions.Item label="Box">
+                    <Descriptions.Item label="Box:">
                       {" "}
                       {box.item_box_no}
                     </Descriptions.Item>

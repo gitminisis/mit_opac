@@ -22,6 +22,14 @@
   font-weight: bold !important;
   background-color: #81687b !important;
 }
+.accountButton {
+  color: white !important;
+  font-weight: bold !important;
+  background-color: #81687b !important;
+  font-size: 1.1rem !important;
+  margin-top: 20px;
+  height: 50px !important;
+}
 
 .sideBarCard .ant-card-head {
   background-color: #5c7f92 !important;
@@ -143,7 +151,8 @@
 }
 
 #searchSubmitBtn:hover,
-.sortButton:hover {
+.sortButton:hover,
+.accountButton:hover {
   background-color: #977c91 !important;
   border: none !important;
 }

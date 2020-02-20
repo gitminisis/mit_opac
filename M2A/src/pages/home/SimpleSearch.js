@@ -40,7 +40,8 @@ class SimpleSearch extends React.Component {
   };
 
   render() {
-    let action = this.props.searchLink;
+    let sessionId = document.getElementById("session-id").innerText;
+    let action = `${sessionId}?UNIONSEARCH&APPLICATION=UNION_VIEW&LANGUAGE=144&SIMPLE_EXP=Y&ERRMSG=[MIT_ROOT]no-record.html`;
     let isLoggedOn = isLogged();
     return (
       <>

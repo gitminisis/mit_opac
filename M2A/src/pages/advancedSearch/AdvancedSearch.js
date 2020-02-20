@@ -43,7 +43,8 @@ class AdvancedSearch extends React.Component {
   };
 
   render() {
-    let action = this.props.searchLink;
+    let sessionId = document.getElementById("session-id").innerText;
+    let action = `${sessionId}?UNIONSEARCH&APPLICATION=UNION_VIEW&LANGUAGE=144&SIMPLE_EXP=Y&ERRMSG=[MIT_ROOT]no-record.html`;
     console.log(SEARCH_TERMS);
     return (
       <>

@@ -1,5 +1,15 @@
 import React from "react";
-import { Row, Col, Button, Input, Form, Menu, Dropdown, Icon ,DatePicker} from "antd";
+import {
+  Row,
+  Col,
+  Button,
+  Input,
+  Form,
+  Menu,
+  Dropdown,
+  Icon,
+  DatePicker
+} from "antd";
 const { Search } = Input;
 import { isLogged } from "../../services/authentication";
 import LoginModal from "../LoginModal";
@@ -41,9 +51,11 @@ class SearchBar extends React.Component {
             <Col span={6}>
               <Dropdown
                 overlay={
-                  <Menu>
+                  <Menu style={{ textAlign: "center" }}>
+                    <Menu.Item key="1">Saved Bag</Menu.Item>
+                    <Menu.Item key="2">Saved Search</Menu.Item>
                     <Menu.Item
-                      key="1"
+                      key="3"
                       onClick={_ =>
                         logout(sessionId).then(res => {
                           window.location = "/";
@@ -51,7 +63,10 @@ class SearchBar extends React.Component {
                       }
                     >
                       {" "}
-                      Logout
+                      <Button type="danger" ghost>
+                        {" "}
+                        Logout
+                      </Button>
                     </Menu.Item>
                   </Menu>
                 }
