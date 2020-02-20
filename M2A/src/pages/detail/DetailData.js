@@ -12,14 +12,18 @@ class DetailData extends React.Component {
       <Tabs defaultActiveKey="1">
         <TabPane tab={<strong>ADDITIONAL DETAILS</strong>} key="1">
           <DataRow title="Material Type:" content={data.item_form}></DataRow>
-          <DataRow
-            title="Physical Extent #:"
-            content={`${data.item_phys_extent} ${data.item_phys_extunit}`}
-          ></DataRow>
-          <DataRow
-            title="Virtual Extent #:"
-            content={`${data.item_virt_extent} ${data.item_virt_extunit}`}
-          ></DataRow>
+          {data.item_phys_extent && data.item_phys_extunit ? (
+            <DataRow
+              title="Physical Extent #:"
+              content={`${data.item_phys_extent} ${data.item_phys_extunit}`}
+            ></DataRow>
+          ) : null}
+          {data.item_virt_extent && data.item_virt_extunit ? (
+            <DataRow
+              title="Virtual Extent #:"
+              content={`${data.item_virt_extent} ${data.item_virt_extunit}`}
+            ></DataRow>
+          ) : null}
           <DataRow
             title="Extent Details:"
             content={data.item_physical_desc}
@@ -45,7 +49,7 @@ class DetailData extends React.Component {
             <Col span={8}>
               <Card
                 hoverable
-                style={{ width: 240 }}
+                style={{ width: 240, margin: "0 auto" }}
                 cover={
                   <img
                     alt="example"
@@ -56,61 +60,11 @@ class DetailData extends React.Component {
                   <Tooltip title="Download">
                     <Icon type="download" />
                   </Tooltip>,
-                  <Tooltip title="Save">
+                  <Tooltip title="Save To Bag">
                     <Icon type="save" />
                   </Tooltip>,
-                  <Tooltip title="Share">
-                         <Icon type="link" />
-                  </Tooltip>
-                ]}
-              >
-                <Meta title="MIT Campus" description="MIT Campus" />
-              </Card>
-            </Col>
-            <Col span={8}>
-              <Card
-                hoverable
-                style={{ width: 240 }}
-                cover={
-                  <img
-                    alt="example"
-                    src="https://cdn.vox-cdn.com/thumbor/rowh9pZ4aD7IAbAUxjN4NhxVJY0=/0x0:639x426/1200x800/filters:focal(269x162:371x264)/cdn.vox-cdn.com/uploads/chorus_image/image/61774029/MIT_Computer_Announce_01_0.0.jpg"
-                  />
-                }
-                actions={[
-                  <Tooltip title="Download">
-                    <Icon type="download" />
-                  </Tooltip>,
-                  <Tooltip title="Save">
-                    <Icon type="save" />
-                  </Tooltip>,
-                  <Tooltip title="Share">
-                         <Icon type="link" />
-                  </Tooltip>
-                ]}
-              >
-                <Meta title="MIT Campus" description="MIT Campus" />
-              </Card>
-            </Col>
-            <Col span={8}>
-              <Card
-                hoverable
-                style={{ width: 240 }}
-                cover={
-                  <img
-                    alt="example"
-                    src="https://cdn.vox-cdn.com/thumbor/rowh9pZ4aD7IAbAUxjN4NhxVJY0=/0x0:639x426/1200x800/filters:focal(269x162:371x264)/cdn.vox-cdn.com/uploads/chorus_image/image/61774029/MIT_Computer_Announce_01_0.0.jpg"
-                  />
-                }
-                actions={[
-                  <Tooltip title="Download">
-                    <Icon type="download" />
-                  </Tooltip>,
-                  <Tooltip title="Save">
-                    <Icon type="save" />
-                  </Tooltip>,
-                  <Tooltip title="Share">
-              <Icon type="link" />
+                  <Tooltip title="Copy URL">
+                    <Icon type="link" />
                   </Tooltip>
                 ]}
               >

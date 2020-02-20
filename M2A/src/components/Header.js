@@ -14,15 +14,15 @@ class PageHeader extends React.Component {
             paddingBottom: "20px"
           }}
         >
-          {" "}
           <Row gutter={0}>
             <Col
               lg={8}
               id="banner"
               style={{ cursor: "pointer" }}
               onClick={_ =>
-                (window.location =
-                  "http://mit.minisisinc.com/scripts/mwimain.dll?get&file=[MIT_ROOT]home.html")
+                (window.location = `${
+                  document.getElementById("session-id").innerText
+                }?get&file=[MIT_ROOT]home.html`)
               }
             >
               ARCHIVES <br /> COLLECTIONS

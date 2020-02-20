@@ -56,7 +56,6 @@ class Detail extends React.Component {
                     </Breadcrumb.Item>
                     {data.return_summary ? (
                       <>
-                        {" "}
                         <Breadcrumb.Separator>></Breadcrumb.Separator>
                         <Breadcrumb.Item href={data.return_summary.a._href}>
                           SEARCH RESULTS

@@ -8,12 +8,15 @@ import {
   Checkbox,
   Row,
   Col,
-  Modal
+  Modal,
+  DatePicker
 } from "antd";
 const { Search } = Input;
 
 import Tree from "../../components/Tree";
-class SimpleSearch extends React.Component {
+import { SEARCH_TERMS } from "../../services/advanceSearch";
+import FieldSelect from "./FieldSelect";
+class AdvancedSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,6 +44,7 @@ class SimpleSearch extends React.Component {
 
   render() {
     let action = this.props.searchLink;
+    console.log(SEARCH_TERMS);
     return (
       <>
         <Card
@@ -49,9 +53,6 @@ class SimpleSearch extends React.Component {
           type="inner"
           title={<strong>ADVANCED SEARCH</strong>}
         >
-          <p>
-            <strong>Please login first to begin you search</strong>
-          </p>
           <Row gutter={4}>
             <Col span={22} offset={1} style={{ marginBottom: "50px" }}>
               {" "}
@@ -65,25 +66,33 @@ class SimpleSearch extends React.Component {
                   console.log(e);
                 }}
                 style={{ width: "100%" }}
-              >
-                <Search
-                  prefix={
-                    <Icon type="search" style={{ color: "rgba(0,0,0,.25)" }} />
-                  }
-                  allowClear={true}
-                  name="KEYWORD_CL"
-                  placeholder="Search Term"
-                  enterButton={
-                    <Button type="submit" id="searchSubmitBtn">
-                      {" "}
-                      Search
-                    </Button>
-                  }
-                  onSearch={value =>
-                    document.getElementById("simpleSearch").submit()
-                  }
-                />
-              </Form>
+              ></Form>
+              <FieldSelect />
+              <Button type="dashed" style={{ width: 200 }}>
+                <Icon type="plus" /> Add field
+              </Button>
+              <DatePicker
+                renderExtraFooter={() => "extra footer"}
+                showTime
+                id="datePick"
+                defaultPickerValue="2012"
+                mode="year"
+                format="YYYY"
+                onPanelChange={(e, mode) => {
+                  console.log(e, mode);
+
+                  const ke = new KeyboardEvent("keydown", {
+                    bubbles: true,
+                    cancelable: true,
+                    keyCode: 13
+                  });
+                  console.log(ke);
+                  document.dispatchEvent(ke);
+                }}
+                onChange={_ => {
+                  console.log("henlo");
+                }}
+              />
             </Col>
           </Row>
 
@@ -94,7 +103,14 @@ class SimpleSearch extends React.Component {
               </Button>
             </Col>
             <Col span={8}>
-              <Button style={{ width: "75%" }}>Advanced Search</Button>
+              <Button
+                style={{ width: "75%" }}
+                href={`${
+                  document.getElementById("session-id").innerText
+                }?get&file=[MIT_ROOT]home.html`}
+              >
+                Simple Search
+              </Button>
             </Col>
             <Col span={8}>
               <Button style={{ width: "75%" }}>Help</Button>
@@ -115,4 +131,4 @@ class SimpleSearch extends React.Component {
   }
 }
 
-export default SimpleSearch;
+export default AdvancedSearch;

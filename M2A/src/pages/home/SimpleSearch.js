@@ -11,7 +11,7 @@ import {
   Modal
 } from "antd";
 const { Search } = Input;
-
+import { isLogged } from "../../services/authentication";
 import Tree from "../../components/Tree";
 class SimpleSearch extends React.Component {
   constructor(props) {
@@ -41,6 +41,7 @@ class SimpleSearch extends React.Component {
 
   render() {
     let action = this.props.searchLink;
+    let isLoggedOn = isLogged();
     return (
       <>
         <Card
@@ -49,9 +50,11 @@ class SimpleSearch extends React.Component {
           type="inner"
           title={<strong>SIMPLE SEARCH</strong>}
         >
-          <p>
-            <strong>Please login first to begin you search</strong>
-          </p>
+          {!isLoggedOn ? (
+            <p>
+              <strong>Please login first to begin you search</strong>
+            </p>
+          ) : null}
           <Row gutter={4}>
             <Col span={22} offset={1} style={{ marginBottom: "50px" }}>
               {" "}
@@ -67,6 +70,7 @@ class SimpleSearch extends React.Component {
                 style={{ width: "100%" }}
               >
                 <Search
+                  disabled={!isLoggedOn}
                   prefix={
                     <Icon type="search" style={{ color: "rgba(0,0,0,.25)" }} />
                   }
@@ -89,17 +93,21 @@ class SimpleSearch extends React.Component {
 
           <Col gutter={36}>
             <Col span={8}>
-              <Button style={{ width: "75%" }} onClick={this.showModal}>
+              <Button
+                style={{ width: "75%" }}
+                onClick={this.showModal}
+                disabled={!isLoggedOn}
+              >
                 Browse
               </Button>
             </Col>
             <Col span={8}>
               <Button
                 style={{ width: "75%" }}
-                onClick={_ =>
-                  (window.location =
-                    "http://mit.minisisinc.com/scripts/mwimain.dll?get&file=[MIT_ROOT]advance-page.html")
-                }
+                href={`${
+                  document.getElementById("session-id").innerText
+                }?get&file=[MIT_ROOT]advance-page.html`}
+                disabled={!isLoggedOn}
               >
                 Advanced Search
               </Button>

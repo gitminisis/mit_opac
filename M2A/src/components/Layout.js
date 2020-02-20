@@ -55,6 +55,26 @@ class PageLayout extends React.Component {
                 }
               >
                 {this.props.children}
+                <Card>
+                  <Row gutter={24}>
+                    <Col span={6}>
+                      <Button style={{ width: "100%" }}>Search</Button>{" "}
+                    </Col>
+                    <Col span={6}>
+                      <Button style={{ width: "100%" }}>
+                        Library &amp; Archives Catalog
+                      </Button>{" "}
+                    </Col>
+                    <Col span={6}>
+                      <Button style={{ width: "100%" }}>
+                        Laboratory History
+                      </Button>
+                    </Col>
+                    <Col span={6}>
+                      <Button style={{ width: "100%" }}>Exhibitions</Button>
+                    </Col>
+                  </Row>
+                </Card>
               </Card>
               <BackTop />
             </Layout>

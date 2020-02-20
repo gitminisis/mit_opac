@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Button, Input, Form, Menu, Dropdown, Icon } from "antd";
+import { Row, Col, Button, Input, Form, Menu, Dropdown, Icon ,DatePicker} from "antd";
 const { Search } = Input;
 import { isLogged } from "../../services/authentication";
 import LoginModal from "../LoginModal";
@@ -81,6 +81,8 @@ class SearchBar extends React.Component {
           >
             {" "}
             <Search
+              allowClear
+              disabled={!isLoggedOn}
               prefix={
                 <Icon type="search" style={{ color: "rgba(0,0,0,.25)" }} />
               }
@@ -104,4 +106,3 @@ class SearchBar extends React.Component {
 }
 
 export default SearchBar;
-
