@@ -1,12 +1,43 @@
 export function save(src) {
-  if (!sessionStorage.getItem("asset")) {
-    sessionStorage.setItem("asset", "[]");
+  if (!localStorage.getItem("asset")) {
+    localStorage.setItem("asset", "[]");
   }
 
-  let assets = sessionStorage.getItem("asset");
+  let assets = localStorage.getItem("asset");
 
   assets = JSON.parse(assets);
+  if (assets.filter(e => e === src).length > 0) {
+    console.log("duplicated");
+    return false;
+  }
   assets.unshift(src);
   assets = JSON.stringify(assets);
-  sessionStorage.setItem("asset", assets);
+  localStorage.setItem("asset", assets);
+  return true;
+}
+
+export function deleteItem(src) {
+  let assets = localStorage.getItem("asset");
+
+  assets = JSON.parse(assets);
+  assets = assets.filter(e => {
+    console.log( src);
+    return e !== src;
+  });
+  assets = JSON.stringify(assets);
+
+  console.log(assets);
+  localStorage.setItem("asset", assets);
+}
+
+export function getAll() {
+  if (!localStorage.getItem("asset")) {
+    localStorage.setItem("asset", "[]");
+    return [];
+  }
+
+  let assets = localStorage.getItem("asset");
+  assets = JSON.parse(assets);
+  console.log(assets);
+  return assets;
 }

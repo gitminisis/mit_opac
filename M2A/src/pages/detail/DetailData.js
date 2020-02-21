@@ -1,5 +1,5 @@
 import React from "react";
-import { Tabs, Row, Col, Card, Icon, Tooltip } from "antd";
+import { Tabs, Row, Col, Card, Icon, Tooltip, message } from "antd";
 import DataRow from "./DataRow";
 
 const { TabPane } = Tabs;
@@ -66,9 +66,14 @@ class DetailData extends React.Component {
                     <Icon
                       type="save"
                       onClick={_ => {
-                        save(
+                        let res = save(
                           "https://cdn.vox-cdn.com/thumbor/rowh9pZ4aD7IAbAUxjN4NhxVJY0=/0x0:639x426/1200x800/filters:focal(269x162:371x264)/cdn.vox-cdn.com/uploads/chorus_image/image/61774029/MIT_Computer_Announce_01_0.0.jpg"
                         );
+                        if (res) {
+                          message.success("Asset was succesfully saved");
+                        } else {
+                          message.error("Asset couldn't be saved");
+                        }
                       }}
                     />
                   </Tooltip>,
@@ -93,7 +98,10 @@ class DetailData extends React.Component {
                 }
                 actions={[
                   <Tooltip title="Download">
-                    <Icon type="download" />
+                    <a href="/m2a/src/assets/images/minisis.png" download>
+                      {" "}
+                      <Icon type="download" />
+                    </a>
                   </Tooltip>,
                   <Tooltip title="Save To Bag">
                     <Icon type="save" />
