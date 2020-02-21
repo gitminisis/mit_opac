@@ -21,7 +21,7 @@ export function deleteItem(src) {
 
   assets = JSON.parse(assets);
   assets = assets.filter(e => {
-    console.log( src);
+    console.log(src);
     return e !== src;
   });
   assets = JSON.stringify(assets);
@@ -40,4 +40,17 @@ export function getAll() {
   assets = JSON.parse(assets);
   console.log(assets);
   return assets;
+}
+
+export function removeAll() {
+  localStorage.setItem("asset", "[]");
+  return true;
+}
+export function copyURL(domId) {
+  let url = document.getElementById(domId);
+  url.select();
+  document.execCommand("copy");
+  console.log(url.value);
+
+  document.execCommand("copy");
 }

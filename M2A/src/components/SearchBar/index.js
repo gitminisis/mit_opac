@@ -53,7 +53,16 @@ class SearchBar extends React.Component {
               <Dropdown
                 overlay={
                   <Menu style={{ textAlign: "center" }}>
-                    <Menu.Item key="1">Saved Bag</Menu.Item>
+                    <Menu.Item
+                      key="1"
+                      onClick={_ => {
+                        window.location = `${
+                          document.getElementById("session-id").innerText
+                        }?get&file=[MIT_ROOT]view-bag.html`;
+                      }}
+                    >
+                      Saved Bag
+                    </Menu.Item>
                     <Menu.Item key="2">Saved Search</Menu.Item>
                     <Menu.Item key="3">
                       {" "}

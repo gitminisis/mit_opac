@@ -14,7 +14,7 @@ import {
 const { Meta } = Card;
 const { Content } = Layout;
 import SideBar from "../../components/SideBar";
-import { getAll, deleteItem } from "../../services/savedBag";
+import { getAll, deleteItem, copyURL } from "../../services/savedBag";
 class ViewBag extends React.Component {
   constructor(props) {
     super(props);
@@ -87,7 +87,23 @@ class ViewBag extends React.Component {
                               />
                             </Tooltip>,
                             <Tooltip title="Copy URL">
-                              <Icon type="link" />
+                              <input
+                                style={{
+                                  height: 0,
+                                  position: "absolute",
+                                  zIndex: "-1",
+                                  opacity: ".01"
+                                }}
+                                id={item}
+                                value={item}
+                              ></input>
+                              <Icon
+                                style={{ zIndex: 0 }}
+                                type="link"
+                                onClick={_ => {
+                                  copyURL(item);
+                                }}
+                              />
                             </Tooltip>
                           ]}
                         >
