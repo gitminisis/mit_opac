@@ -1,3 +1,4 @@
+import { message } from "antd";
 export function save(src) {
   if (!localStorage.getItem("asset")) {
     localStorage.setItem("asset", "[]");
@@ -26,7 +27,6 @@ export function deleteItem(src) {
   });
   assets = JSON.stringify(assets);
 
-  console.log(assets);
   localStorage.setItem("asset", assets);
 }
 
@@ -50,7 +50,6 @@ export function copyURL(domId) {
   let url = document.getElementById(domId);
   url.select();
   document.execCommand("copy");
-  console.log(url.value);
 
-  document.execCommand("copy");
+  message.success("URL Copied");
 }

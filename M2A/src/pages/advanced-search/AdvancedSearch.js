@@ -15,6 +15,7 @@ const { Search } = Input;
 
 import Tree from "../../components/Tree";
 import { SEARCH_TERMS } from "../../services/advanceSearch";
+import { isLogged } from "../../services/authentication";
 import FieldSelect from "./FieldSelect";
 class AdvancedSearch extends React.Component {
   constructor(props) {
@@ -29,14 +30,12 @@ class AdvancedSearch extends React.Component {
     });
   };
   handleOk = e => {
-    console.log(e);
     this.setState({
       visible: false
     });
   };
 
   handleCancel = e => {
-    console.log(e);
     this.setState({
       visible: false
     });
@@ -45,7 +44,7 @@ class AdvancedSearch extends React.Component {
   render() {
     let sessionId = document.getElementById("session-id").innerText;
     let action = `${sessionId}?UNIONSEARCH&APPLICATION=UNION_VIEW&LANGUAGE=144&SIMPLE_EXP=Y&ERRMSG=[MIT_ROOT]no-record.html`;
-    console.log(SEARCH_TERMS);
+    let isLoggedOn = isLogged();
     return (
       <>
         <Card
@@ -56,23 +55,19 @@ class AdvancedSearch extends React.Component {
         >
           <Row gutter={4}>
             <Col span={22} offset={1} style={{ marginBottom: "50px" }}>
-              {" "}
               <Form
                 id="simpleSearch"
                 layout="inline"
                 action={action}
                 className="login-form"
                 method="POST"
-                onSubmit={e => {
-                  console.log(e);
-                }}
+                onSubmit={e => {}}
                 style={{ width: "100%" }}
               ></Form>
+
               <FieldSelect />
-              <Button type="dashed" style={{ width: 200 }}>
-                <Icon type="plus" /> Add field
-              </Button>
-              <DatePicker
+
+              {/* <DatePicker
                 renderExtraFooter={() => "extra footer"}
                 showTime
                 id="datePick"
@@ -80,35 +75,37 @@ class AdvancedSearch extends React.Component {
                 mode="year"
                 format="YYYY"
                 onPanelChange={(e, mode) => {
-                  console.log(e, mode);
-
                   const ke = new KeyboardEvent("keydown", {
                     bubbles: true,
                     cancelable: true,
                     keyCode: 13
                   });
-                  console.log(ke);
+
                   document.dispatchEvent(ke);
                 }}
-                onChange={_ => {
-                  console.log("henlo");
-                }}
-              />
+                onChange={_ => {}}
+              /> */}
             </Col>
           </Row>
 
           <Col gutter={36}>
             <Col span={8}>
-              <Button style={{ width: "75%" }} onClick={this.showModal}>
+              <Button
+                style={{ width: "75%" }}
+                onClick={this.showModal}
+                disabled={!isLoggedOn}
+              >
                 Browse
               </Button>
             </Col>
             <Col span={8}>
               <Button
                 style={{ width: "75%" }}
-                href={`${
-                  document.getElementById("session-id").innerText
-                }?get&file=[MIT_ROOT]home.html`}
+                onClick={_ =>
+                  (window.location = `${
+                    document.getElementById("session-id").innerText
+                  }?get&file=[MIT_ROOT]home.html`)
+                }
               >
                 Simple Search
               </Button>

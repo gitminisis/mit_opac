@@ -42,7 +42,19 @@ class DetailData extends React.Component {
           ></DataRow>
           <DataRow
             title="Corporate Taxonomy Term(s):"
-            content={data.item_corporate_group}
+            content={
+              data.item_corporate_grp
+                ? data.item_corporate_grp.item_corporate.map((el, idx) => {
+                    if (
+                      idx !==
+                      data.item_corporate_grp.item_corporate.length - 1
+                    ) {
+                      return `${el} ; `;
+                    }
+                    return el;
+                  })
+                : null
+            }
           ></DataRow>
         </TabPane>
         <TabPane tab={<strong>DIGITAL ASSETS</strong>} key="2">
@@ -72,7 +84,7 @@ class DetailData extends React.Component {
                         if (res) {
                           message.success("Asset was succesfully saved !");
                         } else {
-                          message.warning("Asset has already been saved !");
+                          message.warning("Asset has already been saved");
                         }
                       }}
                     />

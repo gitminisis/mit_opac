@@ -3,7 +3,11 @@
 * {
   font-family: "Open Sans", sans-serif;
 }
-
+pre {
+  font-family: inherit !important;
+  white-space: pre-line !important;
+  margin-bottom: 0 !important;
+}
 #welcome-button {
   width: 100% !important;
   position: absolute !important;
@@ -149,8 +153,13 @@
   font-weight: bold !important;
   border: none !important;
 }
-
-#searchSubmitBtn:hover,
+.advancedSearchBtn {
+  background-color: #81687b !important;
+  color: white !important;
+  font-weight: bold !important;
+  border: none !important;
+}
+.advancedSearchBtn:hover #searchSubmitBtn:hover,
 .sortButton:hover,
 .accountButton:hover {
   background-color: #977c91 !important;
@@ -185,4 +194,14 @@
 
 .boxDescription {
   margin-bottom: 3px !important;
+}
+
+.dynamic-delete-button {
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  font-size: 24px;
+  color: #999;
+  transition: all 0.3s;
+  margin-left: 10px;
 }
