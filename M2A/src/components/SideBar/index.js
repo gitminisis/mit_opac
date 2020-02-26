@@ -37,9 +37,11 @@ class SideBar extends React.Component {
             <Tooltip title="Your saved bag">
               {" "}
               <Button
-                href={`${
-                  document.getElementById("session-id").innerText
-                }?get&file=[MIT_ROOT]view-bag.html`}
+                onClick={_ =>
+                  (window.location = `${
+                    document.getElementById("session-id").innerText
+                  }?get&file=[MIT_ROOT]view-bag.html`)
+                }
                 size="large"
                 className="accountButton"
                 style={{ width: "75%" }}

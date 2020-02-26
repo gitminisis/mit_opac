@@ -70,9 +70,9 @@ class DetailData extends React.Component {
                           "https://cdn.vox-cdn.com/thumbor/rowh9pZ4aD7IAbAUxjN4NhxVJY0=/0x0:639x426/1200x800/filters:focal(269x162:371x264)/cdn.vox-cdn.com/uploads/chorus_image/image/61774029/MIT_Computer_Announce_01_0.0.jpg"
                         );
                         if (res) {
-                          message.success("Asset was succesfully saved");
+                          message.success("Asset was succesfully saved !");
                         } else {
-                          message.error("Asset couldn't be saved");
+                          message.warning("Asset has already been saved !");
                         }
                       }}
                     />

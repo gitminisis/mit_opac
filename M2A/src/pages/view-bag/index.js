@@ -58,6 +58,12 @@ class ViewBag extends React.Component {
                 </Col>
                 <Col span={24} style={{ padding: "0 15px 20px 15px" }}>
                   <Row gutter={16}>
+                    {this.state.bag.length === 0 ? (
+                      <Empty
+                        style={{ marginTop: "100px" }}
+                        description={<h1>No Digital Assets Found</h1>}
+                      ></Empty>
+                    ) : null}
                     {this.state.bag.map(item => (
                       <Col lg={8} md={24}>
                         <Card

@@ -105,9 +105,11 @@ class SimpleSearch extends React.Component {
             <Col span={8}>
               <Button
                 style={{ width: "75%" }}
-                href={`${
-                  document.getElementById("session-id").innerText
-                }?get&file=[MIT_ROOT]advance-page.html`}
+                onClick={_ =>
+                  (window.location = `${
+                    document.getElementById("session-id").innerText
+                  }?get&file=[MIT_ROOT]advance-page.html`)
+                }
                 disabled={!isLoggedOn}
               >
                 Advanced Search
