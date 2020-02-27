@@ -11,7 +11,7 @@ class PageLayout extends React.Component {
   render() {
     return (
       <Row style={{ background: "darkgray" }}>
-        <Col span={20} offset={2}>
+        <Col span={18} offset={3}>
           <Layout>
             <Header />
 

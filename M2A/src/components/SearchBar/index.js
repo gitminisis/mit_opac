@@ -94,7 +94,7 @@ class SearchBar extends React.Component {
                 }
               >
                 <Button id="welcome-button">
-                  Welcome {user} <Icon type="down" />
+                  Welcome <strong> {user}</strong> <Icon type="down" />
                 </Button>
               </Dropdown>
             </Col>

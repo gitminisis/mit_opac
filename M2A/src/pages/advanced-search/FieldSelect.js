@@ -29,24 +29,25 @@ class FieldSelect extends React.Component {
       ]
     };
   }
-  onChange = value => {
-    console.log(`selected ${value}`);
-  };
+
   updateField = (key, value, index) => {
     let searchExp = this.state.searchExp;
     searchExp[index][key] = value;
-    console.log(searchExp);
+
     this.setState({
       searchExp: searchExp
     });
   };
   removeField = index => {
-    console.log(index);
     let searchExp = this.state.searchExp;
-    // searchExp.splice(index, 1);
-    console.log(searchExp[index]);
+
     searchExp.splice(index, 1);
-    console.log(searchExp, this.state.searchExp);
+    searchExp[searchExp.length - 1] = {
+      field: searchExp[searchExp.length - 1].field,
+      keyword: searchExp[searchExp.length - 1].keyword,
+      remove: searchExp[searchExp.length - 1].remove
+    };
+
     this.setState({
       searchExp: searchExp
     });
@@ -63,7 +64,6 @@ class FieldSelect extends React.Component {
     this.setState({
       searchExp: searchExp
     });
-    console.log(this.state.searchExp);
   };
 
   resetFields = _ => {
@@ -98,7 +98,7 @@ class FieldSelect extends React.Component {
           }`
       )
       .join(" ");
-    console.log(data);
+
     document.getElementById("advancedSearchInput").value = data;
     document.getElementById("advancedSearchForm").submit();
   };
@@ -125,7 +125,7 @@ class FieldSelect extends React.Component {
               disabled={!isLoggedOn}
               value={exp.field ? exp.field : exp.field}
               showSearch
-              style={{ width: "25%" }}
+              style={{ width: "20%" }}
               placeholder="Select a field"
               optionFilterProp="children"
               onChange={value => {
@@ -146,7 +146,7 @@ class FieldSelect extends React.Component {
               placeholder="Search Term"
               allowClear
               value={exp.keyword}
-              style={{ width: "50%" }}
+              style={{ width: "55%" }}
               onChange={e => {
                 this.updateField("keyword", e.target.value, index);
               }}
@@ -188,7 +188,7 @@ class FieldSelect extends React.Component {
         >
           <Icon type="plus" /> Add field
         </Button>
-        <Row gutter={16} style={{ maxWidth: "750px", margin: "20px auto" }}>
+        <Row gutter={4} style={{ maxWidth: "750px", margin: "20px auto" }}>
           <Col span={12}>
             <InputGroup compact>
               <Select

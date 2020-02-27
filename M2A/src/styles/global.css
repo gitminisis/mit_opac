@@ -107,8 +107,14 @@ pre {
   border-radius: 0 !important;
 }
 
+.summaryDataCard .ant-card-body {
+  padding: 0 !important;
+}
+.summaryDataCard {
+  margin-bottom: 40px !important;
+}
 .summaryRecord {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 .summaryRecord .ant-descriptions-item-label {
   font-weight: bold !important;

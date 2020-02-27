@@ -1,5 +1,6 @@
 import React from "react";
-import { Descriptions } from "antd";
+import { Descriptions, Card, Icon } from "antd";
+const { Meta } = Card;
 class Data extends React.Component {
   getBoxGroup = item_box_group => {
     let box_group = [];
@@ -18,7 +19,14 @@ class Data extends React.Component {
     let item = this.props.data;
 
     return (
-      <>
+      <Card
+        className="summaryDataCard"
+        actions={[
+          <Icon type="book" key="book" />,
+          <Icon type="printer" key="printer" />,
+          <Icon type="save" key="save" />
+        ]}
+      >
         <Descriptions
           bordered={this.props.bordered}
           column={1}
@@ -72,7 +80,7 @@ class Data extends React.Component {
             </Descriptions.Item>
           ) : null} */}
         </Descriptions>
-      </>
+      </Card>
     );
   }
 }
