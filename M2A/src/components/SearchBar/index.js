@@ -69,26 +69,17 @@ class SearchBar extends React.Component {
                     <Menu.Item key="2">Saved Search</Menu.Item>
                     <Menu.Item key="3">
                       {" "}
-                      <Popconfirm
-                        placement="top"
-                        title={
-                          <span>
-                            You might lose your saved bag. <br /> Do you want to
-                            logout ?
-                          </span>
-                        }
-                        onConfirm={_ => {
+                      <Button
+                        onClick={_ => {
                           logout(sessionId).then(res => {
                             window.location = "/";
                           });
                         }}
-                        okText="Yes"
-                        cancelText="No"
+                        type="danger"
+                        ghost
                       >
-                        <Button type="danger" ghost>
-                          LOGOUT
-                        </Button>
-                      </Popconfirm>
+                        LOGOUT
+                      </Button>
                     </Menu.Item>
                   </Menu>
                 }

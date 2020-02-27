@@ -59,29 +59,18 @@ class SideBar extends React.Component {
                 SAVED SEARCH
               </Button>
             </Tooltip>{" "}
-            <Popconfirm
-              placement="bottom"
-              title={
-                <span>
-                  You might lose your saved bag. <br /> Do you want to logout ?
-                </span>
-              }
-              onConfirm={_ => {
+            <Button
+              onClick={_ => {
                 logout(sessionId).then(res => {
                   window.location = "/";
                 });
               }}
-              okText="Yes"
-              cancelText="No"
+              size="large"
+              className="accountButton"
+              style={{ width: "75%", marginBottom: "30px" }}
             >
-              <Button
-                size="large"
-                className="accountButton"
-                style={{ width: "75%", marginBottom: "30px" }}
-              >
-                LOGOUT
-              </Button>
-            </Popconfirm>
+              LOGOUT
+            </Button>
           </Card>
         </div>
       </>

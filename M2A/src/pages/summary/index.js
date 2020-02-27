@@ -1,5 +1,6 @@
 import React from "react";
 import PageLayout from "../../components/Layout";
+
 import { xmlToJson } from "../../services";
 import {
   Row,
@@ -38,19 +39,102 @@ class Summary extends React.Component {
 
     this.state = {
       data: json.report,
-
-    
+      next: json.report.next_page ? json.report.next_page.a._href : null,
+      try: 0
     };
     console.log(this.state.data);
   }
+  handleScroll = () => {
+    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+      // you're at the bottom of the page
+      let item = this.state.data.item;
+      item = item.concat(...item);
+      let data = this.state.data;
+      data.item = item;
+      this.setState({ data: data });
+    }
+    // let lastLi = document.querySelector(".summaryDataCard:last-child");
+    // var lastLiOffset = lastLi.offsetTop + lastLi.clientHeight;
+    // var pageOffset = window.pageYOffset + window.innerHeight;
+    // console.log(lastLiOffset, pageOffset);
+    // if (pageOffset / 1.5 > lastLiOffset) {
+    //   let item = this.state.data.item;
+    //   console.log(item.concat(...item));
+    // }
+  };
+  loadRecord = _ => {
+    console.log("123");
+    // this.scrollListener = window.addEventListener("scroll", e => {
+    //   this.handleScroll(e);
+    // });
+    let { next } = this.state;
+    if (next) {
+      console.log(next);
+      axios.get(next).then(res => {
+        let dataXML = res.data;
+        let newDocument = document
+          .createRange()
+          .createContextualFragment(dataXML);
+        let xml = newDocument.querySelector("#summary_xml");
 
+        let json = xmlToJson(xml, [
+          "report.item",
+          "report.item.item_box_group",
+          "report.item.item_subject_group",
+          "report.filters.div.xml.filter",
+          "report.filters.div.xml.filter.item_group"
+        ]);
+        console.log(json);
+
+        let newItem = json.report.item;
+        let newNext = json.report.next_page
+          ? json.report.next_page.a._href
+          : null;
+        let item = this.state.data.item;
+        item = item.concat(...newItem);
+        let data = this.state.data;
+        data.item = item;
+        this.setState({ data: data, next: newNext });
+      });
+    }
+  };
+  fakeLoad = a => {
+    if (this.state.try < a) {
+      axios.get(this.state.next).then(res => {
+        let dataXML = res.data;
+        let newDocument = document
+          .createRange()
+          .createContextualFragment(dataXML);
+        let xml = newDocument.querySelector("#summary_xml");
+
+        let json = xmlToJson(xml, [
+          "report.item",
+          "report.item.item_box_group",
+          "report.item.item_subject_group",
+          "report.filters.div.xml.filter",
+          "report.filters.div.xml.filter.item_group"
+        ]);
+        console.log(json);
+
+        let newItem = json.report.item;
+
+        let item = this.state.data.item;
+        item = item.concat(...newItem);
+        let data = this.state.data;
+        data.item = item;
+        this.setState({ data: data, try: this.state.try + 1 });
+      });
+    }
+  };
   render() {
     let searchLink = document.getElementById("search-link");
     if (searchLink) {
       searchLink = searchLink.innerText;
     }
     let { data } = this.state;
-    console.log(data);
+    console.log(data.item.length);
+    // this.loadRecord();
+   
     return (
       <PageLayout>
         <Content>
@@ -71,7 +155,7 @@ class Summary extends React.Component {
                   }}
                 >
                   {" "}
-                  <Breadcrumb separator=""  id="breadcrumb">
+                  <Breadcrumb separator="" id="breadcrumb">
                     <Breadcrumb.Item
                       href={`${
                         document.getElementById("session-id").innerText

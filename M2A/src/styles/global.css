@@ -211,3 +211,7 @@ pre {
   transition: all 0.3s;
   margin-left: 10px;
 }
+
+.bookmarkedRecord {
+  color: #1890ff !important;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Descriptions, Card, Icon } from "antd";
+import { Descriptions, Card, Icon, Tooltip } from "antd";
 const { Meta } = Card;
 class Data extends React.Component {
   getBoxGroup = item_box_group => {
@@ -17,14 +17,30 @@ class Data extends React.Component {
 
   render() {
     let item = this.props.data;
-
     return (
       <Card
         className="summaryDataCard"
         actions={[
-          <Icon type="book" key="book" />,
-          <Icon type="printer" key="printer" />,
-          <Icon type="save" key="save" />
+          <Tooltip
+            placement="bottom"
+            title={
+              item.item_status === "true" ? "Deselect Record" : "Select Record"
+            }
+          >
+            <Icon
+              className={item.item_status === "true" ? "bookmarkedRecord" : ""}
+              style={{ color: "#1890ff !important" }}
+              type="book"
+              key="book"
+              theme={item.item_status === "true" ? "filled" : "outlined"}
+            />
+          </Tooltip>,
+          <Tooltip placement="bottom" title={"Print Record"}>
+            <Icon type="printer" key="printer" />
+          </Tooltip>,
+          <Tooltip placement="bottom" title={"Save All Assets"}>
+            <Icon type="save" key="save" />
+          </Tooltip>
         ]}
       >
         <Descriptions
