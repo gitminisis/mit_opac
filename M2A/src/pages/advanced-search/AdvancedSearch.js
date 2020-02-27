@@ -1,20 +1,8 @@
 import React from "react";
-import {
-  Card,
-  Input,
-  Form,
-  Icon,
-  Button,
-  Checkbox,
-  Row,
-  Col,
-  Modal,
-  DatePicker
-} from "antd";
-const { Search } = Input;
+import { Card, Input, Form, Button, Row, Col, Modal } from "antd";
 
 import Tree from "../../components/Tree";
-import { SEARCH_TERMS } from "../../services/advanceSearch";
+
 import { isLogged } from "../../services/authentication";
 import FieldSelect from "./FieldSelect";
 class AdvancedSearch extends React.Component {
@@ -66,25 +54,6 @@ class AdvancedSearch extends React.Component {
               ></Form>
 
               <FieldSelect />
-
-              {/* <DatePicker
-                renderExtraFooter={() => "extra footer"}
-                showTime
-                id="datePick"
-                defaultPickerValue="2012"
-                mode="year"
-                format="YYYY"
-                onPanelChange={(e, mode) => {
-                  const ke = new KeyboardEvent("keydown", {
-                    bubbles: true,
-                    cancelable: true,
-                    keyCode: 13
-                  });
-
-                  document.dispatchEvent(ke);
-                }}
-                onChange={_ => {}}
-              /> */}
             </Col>
           </Row>
 

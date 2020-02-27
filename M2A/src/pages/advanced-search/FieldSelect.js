@@ -102,12 +102,13 @@ class FieldSelect extends React.Component {
     document.getElementById("advancedSearchInput").value = data;
     document.getElementById("advancedSearchForm").submit();
   };
+
   render() {
     let sessionId = document.getElementById("session-id").innerText;
     let isLoggedOn = isLogged();
     return (
       <>
-        {" "}
+       
         <Form
           hidden
           method="POST"
@@ -233,7 +234,7 @@ class FieldSelect extends React.Component {
             </Button>
           </Col>
           <Col span={6}>
-            {" "}
+            
             <Button
               style={{ width: "100%" }}
               className="advancedSearchBtn"
