@@ -1,6 +1,6 @@
 import React from "react";
 import PageLayout from "../../components/Layout";
-import { Row, Col, Layout, Card, Button, Empty } from "antd";
+import { Row, Col, Layout, Empty } from "antd";
 import SimpleSearch from "../home/SimpleSearch";
 const { Content } = Layout;
 class NoRecord extends React.Component {

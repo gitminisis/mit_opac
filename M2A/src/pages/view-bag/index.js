@@ -1,16 +1,6 @@
 import React from "react";
 import PageLayout from "../../components/Layout";
-import {
-  Row,
-  Col,
-  Layout,
-  Card,
-  Button,
-  Empty,
-  Breadcrumb,
-  Tooltip,
-  Icon
-} from "antd";
+import { Row, Col, Layout, Card, Empty, Breadcrumb, Tooltip, Icon } from "antd";
 const { Meta } = Card;
 const { Content } = Layout;
 import SideBar from "../../components/SideBar";
@@ -35,7 +25,7 @@ class ViewBag extends React.Component {
             </Col>
             <Col span={18}>
               <Row gutter={0}>
-                {" "}
+              
                 <Col
                   span={24}
                   style={{
@@ -43,7 +33,7 @@ class ViewBag extends React.Component {
                     padding: "18px 15px 14px 15px"
                   }}
                 >
-                  {" "}
+                 
                   <Breadcrumb separator="" id="breadcrumb">
                     <Breadcrumb.Item
                       href={`${
