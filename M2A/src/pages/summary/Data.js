@@ -47,27 +47,30 @@ class Data extends React.Component {
             <Descriptions.Item label="Date">{item.item_date}</Descriptions.Item>
           ) : null}
 
-          {item.item_box_group ? (
+          {/* {item.item_box_group ? (
             <Descriptions.Item label="Location/Box">
               {this.getBoxGroup(item.item_box_group).map(box => {
-                console.log(box);
+                console.log(this.getBoxGroup(item.item_box_group));
+                if (!box) {
+                  return null;
+                }
                 return (
                   <Descriptions column={2} className="boxDescription">
                     <Descriptions.Item
                       label="Location:"
                       className="boxLocationDescription"
                     >
-                      {box.item_container}
+                      {box.item_container ? box.item_container : null}
                     </Descriptions.Item>
                     <Descriptions.Item label="Box:">
                       {" "}
-                      {box.item_box_no}
+                      {box.item_box_no ? box.item_box_no : null}
                     </Descriptions.Item>
                   </Descriptions>
                 );
               })}
             </Descriptions.Item>
-          ) : null}
+          ) : null} */}
         </Descriptions>
       </>
     );

@@ -18,11 +18,12 @@ class Detail extends React.Component {
     let xml = document.querySelector("#detail_xml");
 
     let json = xmlToJson(xml, [
-      "detail.item_corporate_grp.item_corporate",
-      "detail.item_box_group"
+      "report.item.item_corporate_grp.item_corporate",
+      "report.item.item_box_group"
     ]);
+    console.log(json);
     this.state = {
-      data: json.detail
+      data: json.report
     };
   }
   render() {

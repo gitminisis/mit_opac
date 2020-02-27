@@ -29,17 +29,17 @@ class Summary extends React.Component {
     let xml = document.querySelector("#summary_xml");
     console.log(xml);
     let json = xmlToJson(xml, [
-      "summary_xml.record.item",
-      "summary_xml.record.item.item_box_group",
-      "summary_xml.record.item.item_subject_group",
-      "summary_xml.filters.div.xml.filter",
-      "summary_xml.filters.div.xml.filter.item_group"
+      "report.item",
+      "report.item.item_box_group",
+      "report.item.item_subject_group",
+      "report.filters.div.xml.filter",
+      "report.filters.div.xml.filter.item_group"
     ]);
 
     this.state = {
-      data: json.summary_xml,
+      data: json.report,
 
-      count: json.summary_xml.bookmark.count
+    
     };
     console.log(this.state.data);
   }
@@ -96,7 +96,7 @@ class Summary extends React.Component {
                   <SortBar />
                 </Col>
                 <Col span={18} style={{ padding: "0 15px 20px 15px" }}>
-                  {data.records.item.map(item => (
+                  {data.item.map(item => (
                     <Data data={item} bordered={true} />
                   ))}
                 </Col>
