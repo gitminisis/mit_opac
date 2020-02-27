@@ -2,7 +2,7 @@ import React from "react";
 import { Layout, Menu, Icon } from "antd";
 const { Sider } = Layout;
 import { OnPageContext } from "../context";
-import { LINK } from "../services";
+
 class PageSider extends React.Component {
   render() {
 

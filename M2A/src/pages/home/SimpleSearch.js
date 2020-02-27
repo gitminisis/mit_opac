@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  Card,
-  Input,
-  Form,
-  Icon,
-  Button,
-  Checkbox,
-  Row,
-  Col,
-  Modal
-} from "antd";
+import { Card, Input, Form, Icon, Button, Row, Col, Modal } from "antd";
 const { Search } = Input;
 import { isLogged } from "../../services/authentication";
 import Tree from "../../components/Tree";
@@ -58,7 +48,6 @@ class SimpleSearch extends React.Component {
           ) : null}
           <Row gutter={4}>
             <Col span={22} offset={1} style={{ marginBottom: "50px" }}>
-              {" "}
               <Form
                 id="simpleSearch"
                 layout="inline"

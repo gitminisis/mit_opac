@@ -22,20 +22,14 @@ import SideBar from "../../components/SideBar";
 import SortBar from "./SortBar";
 import Filter from "./Filter";
 import Data from "./Data";
-
+import { JSON_ARRAY_FIELD } from "../../services/index";
 class Summary extends React.Component {
   constructor(props) {
     super(props);
 
     let xml = document.querySelector("#summary_xml");
     console.log(xml);
-    let json = xmlToJson(xml, [
-      "report.item",
-      "report.item.item_box_group",
-      "report.item.item_subject_group",
-      "report.filters.div.xml.filter",
-      "report.filters.div.xml.filter.item_group"
-    ]);
+    let json = xmlToJson(xml, JSON_ARRAY_FIELD);
 
     this.state = {
       data: json.report,
@@ -77,13 +71,7 @@ class Summary extends React.Component {
           .createContextualFragment(dataXML);
         let xml = newDocument.querySelector("#summary_xml");
 
-        let json = xmlToJson(xml, [
-          "report.item",
-          "report.item.item_box_group",
-          "report.item.item_subject_group",
-          "report.filters.div.xml.filter",
-          "report.filters.div.xml.filter.item_group"
-        ]);
+        let json = xmlToJson(xml, JSON_ARRAY_FIELD);
         console.log(json);
 
         let newItem = json.report.item;
@@ -134,7 +122,7 @@ class Summary extends React.Component {
     let { data } = this.state;
     console.log(data.item.length);
     // this.loadRecord();
-   
+
     return (
       <PageLayout>
         <Content>

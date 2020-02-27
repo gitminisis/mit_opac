@@ -1,13 +1,12 @@
 import X2JS from "../lib/xml2json.min";
 
-export const LINK = {
-  home: "/index.html",
-  archive: "/scripts/mwimain.dll/144/DESCRIPTION?DIRECTSEARCH",
-  library: "/scripts/mwimain.dll/144/BIBLIO?DIRECTSEARCH",
-  museum: "/scripts/mwimain.dll/144/COLLECTIONS?DIRECTSEARCH",
-  special: "/scripts/mwimain.dll/144/SPECIAL?DIRECTSEARCH"
-};
-
+export const JSON_ARRAY_FIELD = [
+  "report.item",
+  "report.item.item_box_group",
+  "report.item.item_subject_group",
+  "report.filters.div.xml.filter",
+  "report.filters.div.xml.filter.item_group"
+];
 export function xmlToJson(xml, arrayForm) {
   let xmlText = new XMLSerializer().serializeToString(xml);
   var x2js = new X2JS({
