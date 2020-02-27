@@ -1,24 +1,13 @@
 import React from "react";
 import "./index.css";
-import {
-  Typography,
-  PageHeader,
-  Button,
-  Icon,
-  Tabs,
-  Row,
-  Col,
-  Card
-} from "antd";
+import { Button, Icon, Row, Col, Card } from "antd";
 import { PageViewContext } from "../../context";
 import { extractTopBarData } from "../../services";
-const { Title, Text } = Typography;
-const { TabPane } = Tabs;
 
 class TopBar extends React.Component {
   render() {
     const data = extractTopBarData(this.props.data);
-    console.log(data);
+
     return (
       <Card
         className="topBar-card"
@@ -44,14 +33,12 @@ class TopBar extends React.Component {
       >
         <Row>
           <Col span={12}>
-            {" "}
             <p>
               Displaying: {data.range} of {data.total} record(s)
             </p>
           </Col>
 
           <Col span={12}>
-            {" "}
             <Button.Group style={{ float: "right" }}>
               <Button
                 size="large"

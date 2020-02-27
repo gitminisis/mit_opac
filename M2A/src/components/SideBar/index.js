@@ -1,8 +1,8 @@
 import React from "react";
-import { Card, Table, Button, Tooltip, Popconfirm } from "antd";
-const { Column } = Table;
+import { Card, Table, Button, Tooltip } from "antd";
+
 import Tree from "../Tree";
-import { getSearchHistory } from "../../services/searchHistory";
+
 import SearchHistory from "../SearchHistory";
 import { logout } from "../../services/logout";
 
@@ -12,7 +12,6 @@ class SideBar extends React.Component {
     return (
       <>
         <div>
-          {" "}
           <Card
             className="sideBarCard"
             title="Browse By Collection"
@@ -23,7 +22,6 @@ class SideBar extends React.Component {
           </Card>
         </div>
         <div>
-          {" "}
           <SearchHistory />
         </div>
         <div>
@@ -35,7 +33,6 @@ class SideBar extends React.Component {
             bodyStyle={{ textAlign: "center" }}
           >
             <Tooltip title="Your saved bag">
-              {" "}
               <Button
                 onClick={_ =>
                   (window.location = `${

@@ -1,6 +1,6 @@
 import { TREE_DATA } from "../../services/treeData";
 import React from "react";
-import { Tree, Icon } from "antd";
+import { Tree } from "antd";
 const { TreeNode, DirectoryTree } = Tree;
 class TreeView extends React.Component {
   renderTreeNodes = data =>

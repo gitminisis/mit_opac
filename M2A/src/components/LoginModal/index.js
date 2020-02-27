@@ -23,8 +23,6 @@ class LoginModal extends React.Component {
   };
 
   clearForm = _ => {
-    console.log("lele");
-    console.log(document.getElementById("usernameInput").value);
     document.getElementById("usernameInput").setAttribute("value", "");
     document.getElementById("passwordInput").setAttribute("value", "");
   };
@@ -52,11 +50,6 @@ class LoginForm extends React.Component {
     console.log("henlo");
     console.log(e);
     this.props.form.resetFields();
-    // this.props.form.validateFields((err, values) => {
-    //   if (!err) {
-    //     console.log("Received values of form: ", values);
-    //   }
-    // });
   };
   render() {
     return (

@@ -1,10 +1,9 @@
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import Sider from "./Sider";
-import { Layout, Menu, Row, Col, Card, Button } from "antd";
 
-const { Content } = Layout;
+import { Layout, Row, Col, Card, Button } from "antd";
+
 import { BackTop } from "antd";
 
 class PageLayout extends React.Component {

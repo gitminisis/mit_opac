@@ -1,17 +1,5 @@
 import React from "react";
-import {
-  Row,
-  Col,
-  Button,
-  Input,
-  Form,
-  Menu,
-  Dropdown,
-  Icon,
-  DatePicker,
-  Popconfirm,
-  Badge
-} from "antd";
+import { Row, Col, Button, Input, Form, Menu, Dropdown, Icon } from "antd";
 const { Search } = Input;
 import { isLogged } from "../../services/authentication";
 import LoginModal from "../LoginModal";
@@ -39,7 +27,7 @@ class SearchBar extends React.Component {
     let isLoggedOn = isLogged();
 
     let user = document.getElementById("userid").innerText;
-    let searchLink = document.getElementById("search-link").innerText;
+
     let sessionId = document.getElementById("session-id").innerText;
 
     return (
@@ -50,7 +38,6 @@ class SearchBar extends React.Component {
         ></LoginModal>
         {isLoggedOn ? (
           <>
-            {" "}
             <Col span={6}>
               <Dropdown
                 overlay={
@@ -68,7 +55,6 @@ class SearchBar extends React.Component {
 
                     <Menu.Item key="2">Saved Search</Menu.Item>
                     <Menu.Item key="3">
-                      {" "}
                       <Button
                         onClick={_ => {
                           logout(sessionId).then(res => {
@@ -92,7 +78,6 @@ class SearchBar extends React.Component {
           </>
         ) : (
           <Col span={6}>
-            {" "}
             <Button id="welcome-button" onClick={_ => this.openModal()}>
               Login
             </Button>
@@ -100,14 +85,12 @@ class SearchBar extends React.Component {
         )}
 
         <Col span={18}>
-          {" "}
           <Form
             style={{ marginTop: "1px" }}
             method="POST"
             id="searchBarForm"
             action={`${sessionId}?UNIONSEARCH&APPLICATION=UNION_VIEW&LANGUAGE=144&SIMPLE_EXP=Y&ERRMSG=[MIT_ROOT]no-record.html`}
           >
-            {" "}
             <Search
               allowClear
               disabled={!isLoggedOn}
@@ -118,7 +101,6 @@ class SearchBar extends React.Component {
               placeholder="Search Term"
               enterButton={
                 <Button type="submit" id="searchSubmitBtn">
-                  {" "}
                   Search
                 </Button>
               }

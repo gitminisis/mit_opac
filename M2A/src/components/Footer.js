@@ -1,5 +1,5 @@
 import React from "react";
-import { List, Layout, Button, Row, Col } from "antd";
+import { List, Layout } from "antd";
 const { Footer } = Layout;
 import minisis from "../assets/images/minisis.png";
 
@@ -52,16 +52,7 @@ class PageFooter extends React.Component {
             marginBottom: "20px"
           }}
         />
-        <p>&copy; 2019 Minisis Inc. All Rights Reserved.</p>
-        {/* <List
-          grid={{ gutter: 4, column: 4 }}
-          dataSource={footerNavigation}
-          renderItem={item => (
-            <List.Item>
-              <Button>{item.title}</Button>
-            </List.Item>
-          )}
-        /> */}
+        <p>&copy; 2020 Minisis Inc. All Rights Reserved.</p>
       </Footer>
     );
   }

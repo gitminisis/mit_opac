@@ -1,6 +1,5 @@
 import React from "react";
-import { Input, Form, Icon, Button, Checkbox, Row, Col,  } from "antd";
-const { Search } = Input;
+import { Input, Form, Icon, Button, Row, Col } from "antd";
 
 class SearchBar extends React.Component {
   render() {
@@ -8,7 +7,6 @@ class SearchBar extends React.Component {
     let action = `${sessionId}?UNIONSEARCH&APPLICATION=UNION_VIEW&LANGUAGE=144&SIMPLE_EXP=Y&ERRMSG=[MIT_ROOT]no-record.html`;
     return (
       <>
-        {" "}
         <Row gutter={4}>
           <Form
             layout="inline"
