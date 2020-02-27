@@ -9,12 +9,14 @@ import {
   Dropdown,
   Icon,
   DatePicker,
-  Popconfirm
+  Popconfirm,
+  Badge
 } from "antd";
 const { Search } = Input;
 import { isLogged } from "../../services/authentication";
 import LoginModal from "../LoginModal";
 import { logout } from "../../services/logout";
+import { getAll } from "../../services/savedBag";
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -61,8 +63,9 @@ class SearchBar extends React.Component {
                         }?get&file=[MIT_ROOT]view-bag.html`;
                       }}
                     >
-                      Saved Bag
+                      Saved Bag ({getAll().length})
                     </Menu.Item>
+
                     <Menu.Item key="2">Saved Search</Menu.Item>
                     <Menu.Item key="3">
                       {" "}

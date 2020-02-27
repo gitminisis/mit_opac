@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Form, Icon, Button, Checkbox, Row, Col } from "antd";
+import { Input, Form, Icon, Button, Checkbox, Row, Col,  } from "antd";
 const { Search } = Input;
 
 class SearchBar extends React.Component {

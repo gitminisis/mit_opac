@@ -4,11 +4,13 @@ const InputGroup = Input.Group;
 const { Option } = Select;
 import { SEARCH_TERMS } from "../../services/advanceSearch";
 import { isLogged } from "../../services/authentication";
-
+const YEARS = new Array(new Date().getFullYear() - 1700 + 30).fill("");
 class FieldSelect extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      date1: "",
+      date2: "",
       searchExp: [
         {
           field: "REFD",
@@ -186,20 +188,54 @@ class FieldSelect extends React.Component {
         >
           <Icon type="plus" /> Add field
         </Button>
-        <Row>
-          <Col span={8} offset={4}>
+        <Row gutter={16} style={{ maxWidth: "750px", margin: "20px auto" }}>
+          <Col span={12}>
+            <InputGroup compact>
+              <Select
+                disabled={!isLoggedOn}
+                value={new Date().getFullYear()}
+                showSearch
+                style={{ width: "50%" }}
+                placeholder="Select Year"
+                optionFilterProp="children"
+                onChange={value => {
+                  // this.updateField("field", value, index);
+                }}
+              >
+                {YEARS.map((item, index) => (
+                  <Option value={index + 1700}>{index + 1700}</Option>
+                ))}
+              </Select>
+              <Select
+                disabled={!isLoggedOn}
+                value={new Date().getFullYear()}
+                showSearch
+                style={{ width: "50%" }}
+                placeholder="Select Year"
+                optionFilterProp="children"
+                onChange={value => {
+                  // this.updateField("field", value, index);
+                }}
+              >
+                {YEARS.map((item, index) => (
+                  <Option value={index + 1700}>{index + 1700}</Option>
+                ))}
+              </Select>
+            </InputGroup>
+          </Col>
+          <Col span={6}>
             <Button
-              style={{ width: 200 }}
+              style={{ width: "100%" }}
               className="advancedSearchBtn"
               onClick={_ => this.submitSearch()}
             >
               SEARCH
             </Button>
           </Col>
-          <Col span={8}>
+          <Col span={6}>
             {" "}
             <Button
-              style={{ width: 200 }}
+              style={{ width: "100%" }}
               className="advancedSearchBtn"
               onClick={_ => this.resetFields()}
             >
