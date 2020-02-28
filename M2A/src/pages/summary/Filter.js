@@ -15,7 +15,7 @@ const { SubMenu } = Menu;
 class Filter extends React.Component {
   render() {
     let filter = this.props.data;
-    console.log(filter);
+
     return (
       <>
         {filter.map(item_group => (

@@ -174,9 +174,13 @@ class Summary extends React.Component {
                 </Col>
                 <Col
                   span={6}
+                  id="filterCol"
                   style={{
                     backgroundColor: "#EBECEE",
-                    height: "400px"
+                    height: "100vh",
+                    position: "sticky",
+                    top: 0,
+                    overflowY: "scroll"
                   }}
                 >
                   <Button id="searchFilterButton">SEARCH FILTER</Button>

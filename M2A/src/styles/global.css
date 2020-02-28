@@ -215,3 +215,9 @@ pre {
 .bookmarkedRecord {
   color: #1890ff !important;
 }
+#filterCol {
+  -ms-overflow-style: none;
+}
+#filterCol::-webkit-scrollbar {
+  display: none;
+}
